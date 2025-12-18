@@ -1,0 +1,1287 @@
+.nav-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    /* Desktop default */
+
+    background-image: url("img/img1.png");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    /* ✅ responsive height */
+    background-position: center;
+
+    z-index: 9999;
+}
+
+/* White overlay */
+.nav-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+    /* ✅ important */
+}
+
+@media (max-width: 768px) {
+    .nav-border {
+        position: absolute;
+        width: 100%;
+        padding-top: 30px;
+        height: 22px;
+        /* smaller for mobile */
+        background-size: auto 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-border {
+        width: 100%;
+        padding-top: 40px;
+        height: 18px;
+    }
+}
+
+
+
+.montserrat-uniquifier {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+
+/*******************************
+    NAVBAR BASE STYLE
+*******************************/
+
+/* Add space between nav-border and nav-links */
+.navbar {
+    margin-top: 5px;
+    /* space under border */
+    background: #fff !important;
+    padding-top: 0px !important;
+    /* extra space above menu links */
+    padding-bottom: 15px !important;
+}
+
+
+/* LOGO */
+.logo-img {
+    height: 77px !important;
+    /* change height here */
+    width: auto !important;
+    /* keep proportions */
+    object-fit: contain !important;
+    display: block !important;
+}
+
+
+
+
+.logo-tagline {
+    font-size: 12px;
+    color: #4CAF50;
+    margin-top: -20px;
+
+    font-weight: 600;
+}
+
+
+/*******************************
+    NAV LINKS
+*******************************/
+.nav-link {
+    /* Horizontal spacing for desktop links */
+    margin: 1 9px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2E7D32 !important;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* Make logo + menu perfectly aligned horizontally */
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    margin-left: 85px !important;
+    /* Moves logo to the right */
+    margin-right: 10px !important;
+    /* Keeps gap before menu */
+}
+
+
+
+.navbar-nav {
+    margin-left: 30px !important;
+    /* Moves the menu closer */
+}
+
+.navbar-brand {
+    margin-right: 290px !important;
+    /* Reduces the gap from the logo */
+}
+
+
+
+
+/* YELLOW UNDERLINE */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+
+    left: 0;
+    bottom: -6px;
+    border-radius: 5px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #f8b400 !important;
+}
+
+/*******************************
+    DROPDOWN
+*******************************/
+.dropdown-menu {
+    border-radius: 12px;
+    padding: 10px 0;
+    min-width: 200px;
+    border: 1px solid #e5e5e5;
+    margin-top: 12px !important;
+}
+
+.dropdown-item {
+    padding: 12px 20px;
+    transition: 0.3s;
+}
+
+.dropdown-item:hover {
+    background: #f8b400;
+    color: none !important;
+    padding-left: 28px;
+}
+
+/* Add custom dropdown arrow on the RIGHT */
+.dropdown-toggle {
+    position: relative;
+    padding-right: 25px;
+}
+
+/* Remove default bootstrap arrow & add custom one */
+.dropdown-toggle::after {
+    content: "▼";
+    font-size: 10px;
+    position: absolute;
+    left: 95px;
+    /* Keep arrow on right */
+    top: 50%;
+    transform: translateY(-50%);
+    border: none !important;
+    /* Removes yellow border/line */
+}
+
+
+
+
+
+/*******************************
+    PICKLES BUTTON
+*******************************/
+.pickles-btn {
+    background: #2E7D32;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.pickles-btn:hover {
+    background: #256428;
+    color: white !important;
+}
+
+.cart-icon {
+    width: 27px;
+    color: white !important;
+    height: auto;
+}
+
+
+/* ================================
+   TABLET RESPONSIVE (≤ 991px)
+================================ */
+@media (max-width: 991px) {
+
+    /* Reset forced desktop spacing */
+    .navbar-brand {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .navbar-nav {
+        margin-left: 0 !important;
+        text-align: center;
+    }
+
+    /* Logo resize */
+    .logo-img {
+        height: 55px !important;
+    }
+
+    /* Center logo + toggler */
+    .navbar .container {
+        justify-content: space-between;
+    }
+
+    /* Nav links spacing */
+    .nav-link {
+        margin: 10px 0 !important;
+        font-size: 16px;
+    }
+
+    /* Dropdown fixes */
+    .dropdown-menu {
+        text-align: center;
+        margin-top: 0 !important;
+    }
+
+    .dropdown-toggle::after {
+        left: auto;
+        right: 10px;
+    }
+
+    /* Pickles button */
+    .pickles-btn {
+        width: auto;
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE (≤ 767px)
+================================ */
+@media (max-width: 767px) {
+
+    /* Navbar spacing */
+    .navbar {
+        padding: 10px 0 !important;
+    }
+
+    /* Logo center */
+    .navbar-brand {
+        margin: 0 auto !important;
+    }
+
+    .logo-img {
+        height: 48px !important;
+    }
+
+    /* Collapsed menu */
+    .navbar-collapse {
+        background: #fff;
+        padding: 15px 0;
+        border-radius: 10px;
+    }
+
+    .nav-link {
+        font-size: 15px;
+        padding: 8px 0;
+    }
+
+    /* Remove underline animation on mobile */
+    .nav-link::after {
+        display: none;
+    }
+
+    /* Dropdown menu flat */
+    .dropdown-menu {
+        border: none;
+        box-shadow: none;
+    }
+
+    /* Dropdown arrow alignment */
+    .dropdown-toggle::after {
+        right: 0;
+    }
+
+    /* Pickles button full width */
+    .pickles-btn {
+        width: 100%;
+        justify-content: center;
+        margin-top: 12px;
+        font-size: 15px;
+    }
+
+    /* Cart icon */
+    .cart-icon {
+        width: 22px;
+    }
+}
+
+
+/* ================================
+   PREVENT HORIZONTAL SCROLL
+================================ */
+body {
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+
+
+
+/********** HERO WRAPPER *****************/
+/* ============================
+      HERO SECTION WITH BG IMAGE
+============================= */
+
+/* =============================== HERO SECTION =============================== */
+
+/* HERO HEADER */
+.hero-header {
+    padding: 100px 0;
+    background: url("img/banner_bg.png") no-repeat center center / cover;
+    position: relative;
+    z-index: 1;
+
+}
+
+/* Optional Overlay */
+.hero-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Shift content right */
+.hero-header .container {
+    /* margin-left: 230px; REMOVED to allow centering */
+    margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+    .hero-header .container {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
+
+/* TEXT STYLING */
+.hero-text h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    margin-bottom: 10px;
+
+}
+
+.hero-text .small-title {
+    font-size: 45px;
+    font-weight: 700;
+    color: rgb(7, 97, 7);
+    letter-spacing: -0.5px;
+    margin-top: -150px;
+    margin-left: 80px;
+}
+
+
+
+.hero-text .big-title {
+    font-size: 70px;
+    color: #2e8c43;
+    line-height: 0.9;
+    margin-bottom: 10px;
+    margin-left: 80px;
+}
+
+.hero-text .text-green {
+    color: #2e8c43 !important;
+}
+
+.hero-text p {
+    font-size: 25px;
+    margin-bottom: 50px;
+    font-weight: 500;
+    color: #555;
+    max-width: 600px;
+    /* Limit line length for readability */
+    line-height: 1.2;
+
+}
+
+.hero-text h1,
+.hero-text p {
+    margin: 0;
+    /* remove default margin */
+    padding: 0;
+    /* remove padding just in case */
+    margin-left: 80px;
+}
+
+
+/* HERO IMAGE */
+.yellow-box {
+    background: #f7c700;
+    width: 370px;
+    height: 370px;
+    border-radius: 40px;
+    /* More rounded */
+    position: relative;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 6px solid #ffffff;
+    /* Thicker white border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.yellow-box img {
+    width: 440px;
+    height: 440px;
+    max-width: none;
+    /* Allow overflow */
+    border-radius: 50%;
+    object-fit: cover;
+    margin: -35px;
+    position: relative;
+    z-index: 2;
+}
+
+.yellow-box img {
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: -35px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+    .yellow-box {
+        width: 300px;
+        height: 300px;
+    }
+
+    .yellow-box img {
+        width: 350px;
+        height: 350px;
+        margin: -25px;
+    }
+
+    .hero-header .container {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-header {
+        padding: 60px 0;
+        /* Reduced padding for mobile header */
+        text-align: center;
+    }
+
+    .hero-text .small-title {
+        font-size: 28px;
+        margin-top: 0;
+        /* Reset desktop pull-up */
+        margin-left: 0;
+        /* Reset desktop margin */
+    }
+
+    .hero-text .big-title {
+        font-size: 42px;
+        margin-left: 0;
+        /* Reset desktop margin */
+    }
+
+    .hero-text p {
+        font-size: 18px;
+        margin-left: 0;
+        /* Reset desktop margin */
+        margin-bottom: 30px;
+        max-width: 100%;
+    }
+
+    .hero-text h1,
+    .hero-text p {
+        margin-left: 0 !important;
+        /* Force reset of desktop margins */
+    }
+
+    .yellow-box {
+        width: 220px;
+        height: 220px;
+        margin: 20px auto;
+        border-width: 4px;
+    }
+
+    .yellow-box img {
+        width: 260px;
+        height: 260px;
+        margin: -20px;
+    }
+
+    .hero-header .container {
+        margin-left: 0;
+        padding: 0 15px;
+    }
+
+    .hero-text {
+        margin-top: 0;
+        text-align: center;
+    }
+}
+
+
+/********** meals section *************/
+
+.meal-ticket {
+
+    max-width: 400px;
+    height: 150px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    /* Slightly adjusted padding */
+    gap: 15px;
+    position: relative;
+    overflow: hidden;
+    background-size: 100% 100%;
+    /* Stretch to fill with ticket holes at edges */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Ticket punch edges removed - now handled by background image */
+.meal-ticket::before,
+.meal-ticket::after {
+    display: none;
+}
+
+.meal-ticket::before {
+    left: -11px;
+}
+
+.meal-ticket::after {
+    right: -11px;
+}
+
+/* IMAGE */
+.meal-ticket img {
+    width: 170px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* TEXT BOX */
+.meal-ticket-text {
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.0;
+}
+
+.meal-ticket-text .subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+
+}
+
+.meal-ticket-text .title {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.0;
+}
+
+/* Background variations using new ticket images */
+.bg-monthly {
+    background-image: url('img/Mealbox_bg1.png');
+}
+
+.bg-weekly {
+    background-image: url('img/Mealbox_bg2.png');
+}
+
+.bg-weekend {
+    background-image: url('img/Mealbox_bg3.png');
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .meal-ticket {
+        
+        height: auto;
+        min-height: 150px;
+        flex-direction: row;
+        text-align: left;
+        padding: 15px 25px;
+        gap: 15px;
+    }
+
+    .meal-ticket img {
+        width: 110px;
+        height: 100px;
+    }
+
+    .meal-ticket-text .title {
+        font-size: 28px;
+    }
+
+    .meal-ticket-text .subtitle {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+/* ---------------- About Section ---------------- */
+
+.contact-btn {
+    padding: 20px 30px;
+    background: #dbcd8f;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+
+/* menu card */
+.menu-section {
+    background-image: url('img/bg.png');
+    background-size: 100% 460px;
+    /* change 200px to adjust height */
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-top: 220px;
+    /* space so cards move down */
+    padding-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+    .menu-section {
+        padding-top: 100px;
+        background-size: 100% 250px;
+    }
+}
+
+
+
+
+/* --- Menu Container --- */
+.menu-slider {
+    width: 100%;
+    max-width: 1200px;
+    /* Expanded to fit 4 cards row */
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    /* Slightly tighter gap */
+    justify-content: center;
+}
+
+/* --- Menu Card (your product bg added) --- */
+/* --- Menu Card (your product bg added) --- */
+.menu-card {
+    background-image: url('img/stamp_border.png');
+    /* product background */
+    background-size: 100% 100%;
+    /* Stretch to fill card exactly */
+    background-repeat: no-repeat;
+    width: 260px;
+    /* Reduced width */
+    padding: 25px 15px;
+    /* Increased padding */
+    border-radius: 10px;
+    text-align: center;
+    min-height: 340px;
+    /* Reduced height */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    /* Remove extra margin */
+
+    box-shadow: 0 0 0 transparent;
+}
+
+.menu-card {
+    /* margin: 1px 1px;  REMOVED conflicting margin */
+    flex-shrink: 0;
+    /* Prevent shrinking */
+    max-width: 100%;
+}
+
+/* Hover */
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Product Image */
+.menu-card img {
+    width: 100%;
+    height: 270px;
+    /* Reduced image height */
+
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #eee4c0;
+    margin-bottom: 0.75rem;
+}
+
+/* Text */
+.menu-card h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 90px;
+    color: black;
+    margin: 0;
+}
+
+/* Arrows */
+.arrow {
+    font-size: 2rem;
+    /* Reduce slightly to match image better */
+    color: #000;
+    /* Black as per new image */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    /* larger tap area */
+    transition: 0.2s ease;
+    z-index: 10;
+    font-weight: 900;
+    /* Bold icon */
+}
+
+.arrow:hover {
+    color: #f7c700;
+    /* Hover yellow */
+}
+
+.arrow.left {
+    left: -50px;
+    /* Push out further */
+}
+
+.arrow.right {
+    right: -50px;
+}
+
+
+.menu-slider-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .menu-slider {
+        overflow-x: auto;
+        padding-bottom: 20px;
+        /* Space for scrollbar if any, or touch area */
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+
+        /* Ensure specific sizing/alignment on mobile */
+        max-width: 100%;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .menu-card {
+        /* Fix width on mobile to show part of next card */
+        flex: 0 0 85%;
+        max-width: 85%;
+        margin: 0 !important;
+        /* Remove the auto margins */
+    }
+
+    /* Hide scrollbar for cleaner look */
+    .menu-slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu-slider {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+
+
+
+/* ---------------- Pickles Banner ---------------- */
+
+.pickles-banner {
+    position: relative;
+    background-color: #ffc90e;
+    /* Bright Yellow Background */
+    height: 220px;
+    overflow: hidden;
+    /* Important for hiding parts of the background image */
+    margin-top: 20px;
+    /* Example margin */
+    width: 100%;
+    max-width: 1300px;
+    margin: 20px auto;
+}
+
+/* Background Image Integration */
+.pickles-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url('img/Bottom-Ad.png');
+    background-size: cover;
+    /* Cover the whole area */
+    background-position: center right;
+    /* Focus on the pickle jars */
+    background-repeat: no-repeat;
+    z-index: 0;
+    /* Keep it behind the text */
+}
+
+/* Inner container for positioning text and button */
+.banner-inner {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* Vertically center the content */
+    z-index: 1;
+}
+
+/* Content wrapper (Text and button) */
+.banner-content {
+    /* Align content to the left side */
+    text-align: left;
+    width: 50%;
+    padding-left: 30px;
+}
+
+/* Heading Styling */
+.banner-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: hsl(0, 0%, 0%);
+    /* White text color */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+.btn-shop-now {
+    background-color: #333;
+    /* Dark button background */
+    color: yellow;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    /* Highly rounded pill shape */
+
+    transition: background-color 0.3s;
+}
+
+.btn-shop-now:hover {
+    background-color: #444;
+}
+
+/* --- Dotted Separator Styling --- */
+.banner-separator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    /* Height of the separator pattern */
+    /* This pattern is complex to replicate with pure CSS, but you can approximate the look */
+    background-image: repeating-linear-gradient(45deg,
+            #ffffff 0,
+            #ffffff 1px,
+            transparent 1px,
+            transparent 10px);
+    background-size: 10px 15px;
+
+}
+
+/* Media Query for smaller screens (optional) */
+@media (max-width: 768px) {
+    .pickles-banner {
+        height: 220px;
+        /* Standard banner height */
+        padding: 0;
+        text-align: left;
+    }
+
+    .pickles-banner::before {
+        background-position: right center;
+        /* Image on right */
+        background-size: 50% auto;
+        /* Image takes half width */
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+    }
+
+    .banner-inner {
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .banner-content {
+        width: 55%;
+        /* Text takes slightly more than half on left */
+        text-align: left;
+        padding-left: 20px;
+        margin-top: 0;
+    }
+
+    .banner-title {
+        font-size: 1.4rem;
+        /* Adjusted for smaller space */
+        margin-bottom: 15px;
+    }
+
+    .btn-shop-now {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ---------------- Testimonials ---------------- */
+.testimonial-card {
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+
+/* ===============================
+      TESTIMONIAL SECTION
+=============================== */
+
+.testimonial-section {
+    background: white;
+    /* light cream background */
+    padding: 60px 0;
+    position: relative;
+}
+
+/* subtle decorative dots / pattern */
+.testimonial-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#f0d88c 1px, transparent 1px);
+    background-size: 18px 18px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* Section titles */
+.testimonial-section h5 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.testimonial-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+
+/* ===============================
+       TESTIMONIAL CARDS
+=============================== */
+
+.testimonial-card {
+    background: rgb(255, 255, 255);
+    border-radius: 18px;
+    padding: 30px 20px;
+
+    transition: 0.4s ease;
+    text-align: center;
+    /* same style as meal box */
+    position: relative;
+}
+
+/* Hover effect */
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 10px 28px rgba(0, 0, 0, 0.14);
+    border-color: #f7c844;
+    /* golden hover */
+}
+
+/* Profile image */
+.testimonial-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 60%;
+    margin-bottom: 12px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Name */
+.testimonial-card h5 {
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Comment text */
+.testimonial-card p {
+    font-size: 20px;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .testimonial-section h2 {
+        font-size: 28px;
+    }
+
+    .testimonial-card {
+        padding: 25px 20px;
+    }
+}
+
+
+/* ------------------------------------
+    NEWSLETTER
+------------------------------------ */
+.newsletter-wrapper {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    margin-bottom: -40px;
+}
+
+.newsletter-box {
+    background: #f5eeee;
+    padding: 25px 30px;
+    border-radius: 10px;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.10);
+}
+
+@media (max-width: 768px) {
+    .newsletter-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+}
+
+.newsletter-form .form-control {
+    border-radius: 30px;
+    padding: 15px 20px;
+}
+
+.submit-btn {
+    background: #2e5f25;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 10px;
+}
+
+/* footer  */
+.footer-section {
+    background-color: #1d5e2e;
+    color: #fff;
+    padding: 60px 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.pattern-bg {
+    background: url("img/pattern.png");
+    /* add your dotted leaf pattern */
+    height: 120px;
+    background-size: 100%;
+    background-repeat: repeat-x;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer-content {
+    margin-top: 120px;
+}
+
+.footer-logo {
+    width: 160px;
+    margin-bottom: 20px;
+}
+
+.footer-col h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.social-icons img {
+    width: 42px;
+    height: 42px;
+
+    object-fit: cover;
+    /* keeps icons sharp */
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.social-icons img:hover {
+    transform: translateY(-4px);
+    filter: brightness(0.85);
+}
+
+
+
+.copyright {
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+hr {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/**** footer close ****/
+/****footer border***/
+
+.footer-bottom-border {
+    width: 100%;
+    height: 30px;
+    background-image: url("img/img1.png");
+    background-repeat: repeat-x;
+    background-size: 100%;
+    position: relative;
+}
+
+.footer-bottom-border::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1d5e2e;
+    opacity: 0.6;
+    /* Same light white effect */
+    z-index: 1;
+}

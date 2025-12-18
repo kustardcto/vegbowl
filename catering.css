@@ -1,0 +1,1177 @@
+.nav-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    /* Desktop default */
+
+    background-image: url("img/img1.png");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    /* ✅ responsive height */
+    background-position: center;
+
+    z-index: 9999;
+}
+
+/* White overlay */
+.nav-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+    /* ✅ important */
+}
+
+@media (max-width: 768px) {
+    .nav-border {
+        position: absolute;
+        width: 100%;
+        padding-top: 30px;
+        height: 22px;
+        /* smaller for mobile */
+        background-size: auto 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-border {
+        width: 100%;
+        padding-top: 40px;
+        height: 18px;
+    }
+}
+
+
+
+.montserrat-uniquifier {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+
+.nav-second-border {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 120px;
+    margin-top: -160px;
+    position: relative;
+    /* The base color */
+}
+
+.nav-second-border::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-size: contain;
+    opacity: 0.2;
+    /* This lightens/blends the image with the pink background */
+    z-index: 1;
+}
+
+
+
+
+/*******************************
+    NAVBAR BASE STYLE
+*******************************/
+
+/* Add space between nav-border and nav-links */
+.navbar {
+    position: relative;
+    z-index: 10;
+    margin-top: 5px;
+    /* space under border */
+    background: #fff !important;
+    padding-top: 0px !important;
+    /* extra space above menu links */
+    padding-bottom: 15px !important;
+}
+
+
+/* LOGO */
+.logo-img {
+    height: 77px !important;
+    /* change height here */
+    width: auto !important;
+    /* keep proportions */
+    object-fit: contain !important;
+    display: block !important;
+}
+
+
+
+
+.logo-tagline {
+    font-size: 12px;
+    color: #4CAF50;
+    margin-top: -20px;
+
+    font-weight: 600;
+}
+
+
+/*******************************
+    NAV LINKS
+*******************************/
+.nav-link {
+    /* Horizontal spacing for desktop links */
+    margin: 0 9px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2E7D32 !important;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Make logo + menu perfectly aligned horizontally */
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    margin-left: 85px !important;
+    /* Moves logo to the right */
+    margin-right: 10px !important;
+    /* Keeps gap before menu */
+}
+
+
+
+.navbar-nav {
+    margin-left: 30px !important;
+    /* Moves the menu closer */
+}
+
+.navbar-brand {
+    margin-right: 230px !important;
+    /* Reduces the gap from the logo */
+}
+
+
+/* YELLOW UNDERLINE 
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    left: 0;
+    bottom: -6px;
+    background-color: #f8b400;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}*/
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #f8b400 !important;
+}
+
+/*******************************
+    DROPDOWN
+*******************************/
+.dropdown-menu {
+    border-radius: 12px;
+    padding: 10px 0;
+    min-width: 200px;
+    border: 1px solid #e5e5e5;
+    margin-top: 12px !important;
+}
+
+.dropdown-item {
+    padding: 12px 20px;
+    transition: 0.3s;
+}
+
+.dropdown-item:hover {
+    background: #f8b400;
+    color: none !important;
+    padding-left: 28px;
+}
+
+/* Add custom dropdown arrow on the RIGHT */
+.dropdown-toggle {
+    position: relative;
+    padding-right: 25px;
+}
+
+/* Remove default bootstrap arrow & add custom one */
+.dropdown-toggle::after {
+    content: "▼";
+    font-size: 10px;
+    position: absolute;
+    left: 95px;
+    /* Keep arrow on right */
+    top: 50%;
+    transform: translateY(-50%);
+    border: none !important;
+    /* Removes yellow border/line */
+}
+
+
+
+
+
+/*******************************
+    PICKLES BUTTON
+*******************************/
+.pickles-btn {
+    background: #2E7D32;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.pickles-btn:hover {
+    background: #256428;
+    color: white !important;
+}
+
+.cart-icon {
+    width: 27px;
+    color: white !important;
+    height: auto;
+}
+
+
+/*******************************
+    MOBILE RESPONSIVE
+*******************************/
+@media (max-width: 991px) {
+
+    .navbar {
+        padding: 15px 0 !important;
+    }
+
+    .logo-img {
+        /* On mobile, keep the logo constrained and manageable */
+        max-height: 55px;
+        /* Mobile height */
+        max-width: 100%;
+        margin-left: 120px;
+    }
+
+    /* YELLOW UNDERLINE */
+    .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 3px;
+
+        left: 0;
+        bottom: -6px;
+        border-radius: 5px;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 100%;
+    }
+
+    .nav-link:hover {
+        color: #f8b400 !important;
+    }
+
+    .dropdown-menu {
+        border-radius: 12px;
+        padding: 10px 0;
+        min-width: 200px;
+        border: 1px solid #e5e5e5;
+        margin-top: 12px !important;
+    }
+
+    .dropdown-item {
+        padding: 12px 20px;
+        transition: 0.3s;
+    }
+
+    .dropdown-item:hover {
+        background: #f8b400;
+        color: none !important;
+        padding-left: 28px;
+    }
+
+    /* Add custom dropdown arrow on the RIGHT */
+    .dropdown-toggle {
+        position: relative;
+        padding-right: 25px;
+    }
+
+    /* Remove default bootstrap arrow & add custom one */
+    .dropdown-toggle::after {
+        content: "▼";
+        font-size: 10px;
+        position: absolute;
+        left: 95px;
+        /* Keep arrow on right */
+        top: 50%;
+        transform: translateY(-50%);
+        border: none !important;
+        /* Removes yellow border/line */
+    }
+
+    .pickles-btn {
+        /* Button becomes full width and block-level on mobile */
+        width: 100%;
+        display: block;
+        margin-top: 10px;
+        text-align: center;
+        /* Center text/icon when full width */
+    }
+}
+
+
+
+/* ================================
+   PREVENT HORIZONTAL SCROLL
+================================ */
+body {
+    overflow-x: hidden;
+}
+
+
+/*************************** wraper page**************************************/
+
+
+
+/* ================= PAGE WRAPPER ================= */
+.page-wrapper {
+    display: flex;
+    gap: 5px;
+    padding: 60px 205px;
+    max-width: 1450px;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: flex-start;
+}
+
+/* ================= LEFT COLUMN ================= */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 600px;
+    left: 110px;
+    /*position: relative;
+            left: 110px;*/
+}
+
+.highlight-image,
+.rounded-image {
+    width: 500px;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 40px;
+}
+
+.highlight-image {
+    border: 8px solid #d0e8b0;
+}
+
+.rounded-image {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.container-image {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    position: relative;
+}
+
+.container-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.image-text {
+    position: absolute;
+    left: 28px;
+    top: 45%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.catering-text {
+    position: relative;
+    left: 0px;
+    top: 0;
+    font-size: 38px;
+}
+
+/* ================= RIGHT COLUMN ================= */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    /*position: relative;
+            left: 70px;*/
+    align-items: flex-start;
+}
+
+/* Header */
+.header {
+    color: green;
+    text-align: left;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.header p {
+    margin-top: 4px;
+    color: #000;
+}
+
+/* ================= FORM ================= */
+.form-container {
+    width: 677px;
+    padding: 0;
+    height: 64px;
+    max-width: 500px;
+    border-radius: 14px;
+    left: 961px;
+    top: 453px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+
+}
+
+.full-width {
+    margin-bottom: 10px;
+}
+
+.half-width {
+    flex: 1;
+}
+
+.input-group {
+    position: relative;
+    border: 1.5px solid #7cb342;
+    border-radius: 8px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+
+.full-width,
+.row {
+    display: flex;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.input-group input {
+    width: 100%;
+    height: 100%;
+    padding: 0 50px 0 15px;
+    /* space for icon */
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    color: #a0a0a0;
+    font-weight: normal;
+    cursor: text;
+}
+
+.input-group input:valid {
+    color: #000;
+}
+
+/* Icon images inside input */
+.icon {
+    position: absolute;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* ================= SELECT GROUP ================= */
+.select-group {
+    position: relative;
+    border: 1.5px solid #7cb342;
+    border-radius: 8px;
+    height: 50px;
+    background: #fff;
+}
+
+.select-group select {
+    width: 100%;
+    height: 100%;
+    padding: 0 40px 0 15px;
+    /* space for arrow image */
+    border: none;
+    outline: none;
+    appearance: none;
+    background: transparent;
+    font-size: 16px;
+    color: #a0a0a0;
+    cursor: pointer;
+}
+
+.select-group select:valid {
+    color: #000;
+}
+
+.select-group img {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    pointer-events: none;
+}
+
+/* ================= BUTTON ================= */
+.button button {
+    background-color: #2c6022;
+    color: white;
+    border: none;
+    padding: 18px 40px 22px 65px;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    border-top-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    width: 230px;
+    height: 24;
+    opacity: 1;
+    top: px;
+    left: 0px;
+
+
+}
+
+
+.button button::before {
+    content: "➜";
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 35px;
+    /* continuous animation */
+    animation: arrowForward 2s ease-in-out infinite;
+}
+
+/* On hover or click, trigger the animation 
+.button button:hover::before {
+    animation: arrowForward 0.5s linear infinite;
+}
+    */
+
+@keyframes arrowForward {
+    0% {
+        transform: translateY(-50%) translateX(0);
+        opacity: 1;
+    }
+
+    80% {
+        transform: translateY(-50%) translateX(10px);
+        /* move forward */
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-50%) translateX(0);
+        /* reset to start */
+        opacity: 1;
+    }
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1100px) {
+    .page-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+        left: 0;
+        align-items: center;
+    }
+
+    .header {
+        text-align: center;
+    }
+
+    .button {
+        text-align: center;
+    }
+
+    /* Specific fix for small phones (e.g., iPhone SE) */
+    @media (max-width: 760px) {
+        .row {
+            flex-direction: column;
+            /* Stack Email/Phone/Date/Time vertically */
+            gap: 10px;
+        }
+
+        .half-width {
+            width: 100%;
+        }
+
+        .button button {
+            width: 100%;
+            /* Full width button for easier tapping */
+            padding: 15px 20px 15px 50px;
+            font-size: 18px;
+        }
+    }
+}
+
+
+
+/* ------------------------------------
+    NEWSLETTER
+------------------------------------ */
+.newsletter-wrapper {
+    width: 75%;
+    position: relative;
+    z-index: 10;
+    margin-bottom: -40px;
+    margin-left: 200px;
+
+}
+
+.newsletter-box {
+    background: #f5eeee;
+    padding: 25px 30px;
+    border-radius: 10px;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.10);
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+}
+
+.newsletter-form .form-control {
+    border-radius: 30px;
+    padding: 15px 20px;
+}
+
+.submit-btn {
+    background: #2e5f25;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 10px;
+}
+
+/* footer  */
+.footer-section {
+    background-color: #1d5e2e;
+    color: #fff;
+    padding: 60px 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+    margin-bottom: 0 !important;
+}
+
+.footer-section .row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.footer-col {
+    height: 10%;
+}
+
+
+/* Mobile only */
+@media (max-width: 768px) {
+    .footer-section .row {
+        flex-wrap: wrap;
+    }
+}
+
+
+.pattern-bg {
+    background: url("img/pattern.png");
+    /* add your dotted leaf pattern */
+    height: 120px;
+    background-size: 100%;
+    background-repeat: repeat-x;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer-content {
+    margin-top: 120px;
+}
+
+.footer-logo {
+    width: 160px;
+    margin-bottom: 0px;
+}
+
+.footer-col h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.social-icons img {
+    width: 42px;
+    height: 42px;
+
+    object-fit: cover;
+    /* keeps icons sharp */
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.social-icons img:hover {
+    transform: translateY(-4px);
+    filter: brightness(0.85);
+}
+
+
+
+.copyright {
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+hr {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/**** footer close ****/
+/****footer border***/
+
+.footer-bottom-border {
+    width: 100%;
+    height: 30px;
+    background-image: url("img/img1.png");
+    background-repeat: repeat-x;
+    background-size: 100%;
+    position: relative;
+    margin-top: 0px;
+}
+
+.footer-bottom-border::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1d5e2e;
+    opacity: 0.6;
+    /* Same light white effect */
+    z-index: 1;
+}
+
+/* ===================== MOBILE RESPONSIVE ONLY ===================== */
+@media (max-width: 768px) {
+
+    /* ================= MOBILE NAVBAR EFFECT ================= */
+
+    .nav-link,
+    .dropdown-item {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+
+    /* NAV LINKS – mobile tap effect */
+    .nav-link:active,
+    .nav-link:focus {
+        color: #f8b400 !important;
+    }
+
+    .nav-link:active::after,
+    .nav-link:focus::after,
+    .nav-link.active::after {
+        width: 100%;
+    }
+
+    /* DROPDOWN ITEMS – mobile tap effect */
+    .dropdown-item:active,
+    .dropdown-item:focus {
+        background: #f8b400;
+        padding-left: 28px;
+    }
+
+    /* remove default outline on tap */
+    .nav-link:focus,
+    .dropdown-item:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    /* OTHER MOBILE ADJUSTMENTS */
+    .cards-wrap {
+        gap: 0px !important;
+    }
+
+    .navbar {
+        padding-bottom: 10px !important;
+    }
+
+    .navbar-brand {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .navbar .container {
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+
+    .logo-img {
+        height: 60px !important;
+    }
+
+
+
+
+    /* ================= HERO TEXT ================= */
+    .hero-header {
+        padding: 40px 0;
+    }
+
+    .hero-text {
+        padding-left: 0;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .hero-text .small-title {
+        font-size: 36px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+    /* ================= HERO IMAGES (NO SIDE SCROLL) ================= */
+    .hero-images {
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: nowrap;
+        overflow-x: hidden;
+    }
+
+    .img-box {
+        width: 30vw;
+        /* fits 3 images */
+        max-width: 120px;
+        aspect-ratio: 2 / 3;
+        height: auto;
+        border-radius: 18px;
+    }
+
+    /* ================= INFO CARDS GAP ================= */
+    .cards-wrap {
+        gap: 120px !important;
+    }
+
+    .info-card {
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+        padding: 40px 20px 30px;
+        margin-top: 0;
+    }
+
+    .info-img {
+        width: 90%;
+        height: 120px;
+        top: -60px;
+    }
+
+    .card-body {
+        padding: 20px;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .info-card p {
+        font-size: 15px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    /* ================= NEWSLETTER ================= */
+    .newsletter-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .newsletter-form .form-control,
+    .submit-btn {
+        width: 100%;
+    }
+
+    /* ================= SOCIAL CARDS ================= */
+    .social-card {
+        width: 100%;
+        max-width: 340px;
+        height: 360px;
+    }
+
+    /* ================= FOOTER ================= */
+    .footer-content {
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .social-icons {
+        justify-content: left;
+    }
+}
+
+/*******************************
+    STRICT MOBILE OVERRIDES (max-width: 991px)
+*******************************/
+@media (max-width: 991px) {
+
+    /* Navbar Adjustment */
+    .navbar-brand {
+        margin-left: 15px !important;
+        margin-right: auto !important;
+    }
+
+    .logo-img {
+        margin-left: 0 !important;
+        height: 55px !important;
+    }
+
+    /* Page Wrapper & Layout */
+    .page-wrapper {
+        flex-direction: column !important;
+        padding: 40px 15px !important;
+        gap: 30px !important;
+        align-items: center !important;
+    }
+
+    /* Column Reset */
+    .left-column,
+    .right-column {
+        width: 100% !important;
+        left: 0 !important;
+        align-items: center !important;
+    }
+
+    /* Images Layout */
+    .highlight-image,
+    .rounded-image {
+        width: 100% !important;
+        max-width: 400px !important;
+        height: auto !important;
+        aspect-ratio: 16/9 !important;
+        border-radius: 20px !important;
+    }
+
+    .image-text {
+        font-size: 18px !important;
+        left: 20px !important;
+    }
+
+    .catering-text {
+        font-size: 28px !important;
+    }
+
+    /* Header & Text */
+    .header {
+        text-align: center !important;
+        margin-top: 0 !important;
+    }
+
+    .header h1 {
+        font-size: 32px !important;
+    }
+
+    .header h2 {
+        font-size: 18px !important;
+    }
+
+    .header p {
+        font-size: 14px !important;
+
+        br {
+            display: none !important;
+        }
+    }
+
+    /* Form Container */
+    .form-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+    }
+
+    .row {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .input-group,
+    .select-group {
+        width: 100% !important;
+    }
+
+    /* Button */
+    .button {
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    .button button {
+        width: 100% !important;
+        max-width: 300px !important;
+        padding: 15px 20px 15px 50px !important;
+        font-size: 18px !important;
+        left: 0 !important;
+    }
+
+    /* Newsletter */
+    .newsletter-wrapper {
+        width: 95% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: -20px !important;
+    }
+
+    .newsletter-box {
+        flex-direction: column !important;
+        padding: 25px !important;
+    }
+
+    .newsletter-form {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .submit-btn {
+        width: 100% !important;
+    }
+
+    /* Footer */
+    .footer-section {
+        padding: 40px 15px !important;
+    }
+
+    .footer-section .row {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .footer-col {
+        width: 100% !important;
+        margin-bottom: 30px !important;
+    }
+
+    .social-icons {
+        justify-content: center !important;
+    }
+
+    .footer-logo {
+        margin: 0 auto 15px !important;
+    }
+}

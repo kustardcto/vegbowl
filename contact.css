@@ -1,0 +1,396 @@
+/* =======================================================
+   CONTACT SPECIFIC STYLES
+   (Global styles for Nav, Footer, etc. are in style.css)
+========================================================== */
+
+/* --- HERO SECTION IMAGE OVERRIDE --- */
+.hero-images {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* padding-right: 80px;  Removed to align better with global */
+}
+
+/* Specific image for Contact Hero */
+.full-banner {
+  width: 600px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  /* Added shadow for premium feel */
+}
+
+@media (max-width: 1024px) {
+  .full-banner {
+    width: 480px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-images {
+    justify-content: center;
+    padding-right: 0;
+    margin-top: 20px;
+  }
+
+  .full-banner {
+    width: 100%;
+    max-width: 400px;
+    /* Limit width on mobile */
+    height: auto;
+    border-radius: 18px;
+  }
+}
+
+
+/* ================= CONTACT SECTION ================= */
+
+.contact-section {
+  background: #ffffff;
+  padding: 80px 0;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 5;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 70px;
+  align-items: flex-start;
+  padding: 0 20px;
+}
+
+/* --- LEFT FORM --- */
+.contact-form {
+  flex: 1;
+  /* Fluid width */
+  background: #fff;
+  /* Removed fixed height to allow flexible content */
+  padding: 10px;
+}
+
+
+.contact-form label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  font-size: 16px;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  /* Ensure font matches */
+}
+
+.contact-form textarea {
+  height: 140px;
+  resize: none;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 16px;
+  background: #2e7d32;
+  /* Match theme green */
+  border: none;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECTS */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #2e7d32;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1);
+}
+
+.contact-form button:hover {
+  background: #1b5e20;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(46, 125, 50, 0.4);
+}
+
+
+/* --- RIGHT CONTENT (INFO) --- */
+.contact-info {
+  flex: 1;
+}
+
+.contact-info h2 {
+  font-size: 48px;
+  color: #2e7d32;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* INFO CARDS GRID */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.info-card {
+  padding: 30px;
+  border-radius: 20px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.info-card h4 {
+  margin: 20px 0 5px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+.info-card small {
+  font-size: 15px;
+  color: #666;
+}
+
+.icon {
+  font-size: 32px;
+}
+
+/* COLORS */
+.cream {
+  background: #fff8ef;
+}
+
+.green {
+  background: #f1fbf3;
+  color: #2e7d32;
+}
+
+.purple {
+  background: #f6f1ff;
+}
+
+/* Keeping logic, but check consistency */
+.gray {
+  background: #f5f5f5;
+}
+
+/* CARD HOVER */
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .contact-container {
+    gap: 40px;
+    flex-direction: column-reverse;
+    /* Put info on top or form on top? Usually Form first is ok, but side-by-side break */
+    flex-direction: column;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 100%;
+  }
+
+  .contact-info h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 40px 0;
+  }
+
+  .contact-info h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .contact-info p {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    /* Stack cards */
+  }
+
+  .info-card {
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+/*******************************
+    STRICT MOBILE OVERRIDES
+*******************************/
+@media (max-width: 991px) {
+
+  /* Navbar Adjustment */
+  .navbar-brand {
+    margin-left: 15px !important;
+    margin-right: auto !important;
+  }
+
+  /* Hero Section */
+  .hero-header {
+    padding: 40px 0 !important;
+    text-align: center !important;
+  }
+
+  .hero-text {
+    padding-left: 15px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .hero-text .small-title {
+    font-size: 38px !important;
+    margin-top: 0 !important;
+  }
+
+  .hero-text p {
+    font-size: 18px !important;
+  }
+
+  .hero-images {
+    justify-content: center !important;
+    padding-right: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .full-banner {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 15px !important;
+  }
+
+  /* Contact Section Layout */
+  .contact-section {
+    padding: 40px 0 !important;
+  }
+
+  .contact-container {
+    flex-direction: column !important;
+    /* Info on top of Form as per column-reverse logic or standard flow */
+    gap: 30px !important;
+    padding: 0 15px !important;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100% !important;
+  }
+
+  .contact-info h2 {
+    font-size: 34px !important;
+    text-align: center !important;
+  }
+
+  .contact-info p {
+    text-align: center !important;
+    font-size: 16px !important;
+    margin-bottom: 30px !important;
+  }
+
+  /* Info Cards Grid */
+  .info-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  .info-card {
+    padding: 20px !important;
+    text-align: center !important;
+  }
+
+  /* Form Adjustments */
+  .contact-form {
+    margin-top: 20px !important;
+    padding: 0 !important;
+  }
+
+  /* Pickles Banner */
+  .pickles-banner {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    padding: 40px 0 !important;
+    margin: 20px 0 !important;
+  }
+
+  .banner-inner {
+    padding: 0 15px !important;
+  }
+
+  .banner-content {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 0 !important;
+  }
+
+  .banner-title {
+    font-size: 1.8rem !important;
+  }
+
+  /* Newsletter */
+  .newsletter-box {
+    width: 95% !important;
+    flex-direction: column !important;
+    padding: 25px !important;
+  }
+
+  .newsletter-form {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .submit-btn {
+    width: 100% !important;
+  }
+
+  /* Footer */
+  .footer-content {
+    margin-top: 60px !important;
+    text-align: center !important;
+  }
+
+  .footer-col {
+    margin-bottom: 30px !important;
+  }
+
+  .social-icons {
+    justify-content: center !important;
+  }
+}
