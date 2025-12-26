@@ -4,21 +4,59 @@
 ========================================================== */
 
 /* --- HERO SECTION IMAGE OVERRIDE --- */
-.hero-images {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  /* padding-right: 80px;  Removed to align better with global */
+
+/* HERO HEADER */
+.hero-header {
+    padding: 60px 0;
+    background: url("img/banner_bg.png") no-repeat center center / cover;
+    position: relative;
 }
 
-/* Specific image for Contact Hero */
+/* TEXT AREA */
+.hero-text {
+    margin-bottom: 75px;
+    padding-left: 30px;
+    margin-bottom: -50px;
+   
+}
+
+.hero-text .small-title {
+    color: #2e8c43;
+    font-size: 70px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-left: 70px;
+}
+
+.hero-text p {
+    font-size: 22px;
+    margin-top: -15px;
+    font-weight: 500; margin-left: 80px;
+}
+
+/* IMAGE ROW (RIGHT SIDE) */
+.hero-images {
+    display: flex;
+   
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: -70px;
+    /* moves it right */
+    margin-top: 20px;
+
+    /* Removed overlap - moved image DOWN */
+
+}
+
+/* IMAGE BOX */
 .full-banner {
-  width: 600px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 25px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  /* Added shadow for premium feel */
+    width: 600px;
+    height: 180px;
+    /* correct height */
+    object-fit: cover;
+    border-radius: 25px;
+    margin-bottom: 80px;
+    /* smooth corners */
 }
 
 @media (max-width: 1024px) {
@@ -341,28 +379,51 @@
     padding: 0 !important;
   }
 
-  /* Pickles Banner */
-  .pickles-banner {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    padding: 40px 0 !important;
-    margin: 20px 0 !important;
-  }
+  
+/* Media Query for smaller screens (optional) */
+@media (max-width: 768px) {
+    .pickles-banner {
+        height: 220px;
+        /* Standard banner height */
+        padding: 0;
+        text-align: left;
+    }
 
-  .banner-inner {
-    padding: 0 15px !important;
-  }
+    .pickles-banner::before {
+        background-position: right center;
+        /* Image on right */
+        background-size: 50% auto;
+        /* Image takes half width */
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+    }
 
-  .banner-content {
-    width: 100% !important;
-    text-align: center !important;
-    padding: 0 !important;
-  }
+    .banner-inner {
+        align-items: center;
+        justify-content: flex-start;
+    }
 
-  .banner-title {
-    font-size: 1.8rem !important;
-  }
+    .banner-content {
+        width: 55%;
+        /* Text takes slightly more than half on left */
+        text-align: left;
+        padding-left: 20px;
+        margin-top: 0;
+    }
+
+    .banner-title {
+        font-size: 1.4rem;
+        /* Adjusted for smaller space */
+        margin-bottom: 15px;
+    }
+
+    .btn-shop-now {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
 
   /* Newsletter */
   .newsletter-box {

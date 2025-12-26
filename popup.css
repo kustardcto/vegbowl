@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif, ;
+}
+
+body {
+  margin: 0;
+  background: #666;
+}
+
+/* Overlay */
+.overlay {
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Card */
+.meal-card {
+  width: 650px;
+  max-width: 95%;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 3px solid white;
+  padding: 32px;
+}
+
+/* Title */
+.title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Subtitle */
+.subtitle {
+  margin-top: 10px;
+  color: #6b6b6b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: #000000;
+  border: 1px;
+  margin: 24px 0;
+}
+
+/* Day list */
+.day-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Day row */
+.day-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Text */
+.day-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.day-text p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #222;
+}
+
+/* Icon button */
+.icon-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+
+
+.icon-btn:hover {
+  background: #e8f5e9;
+  border-radius: 0.2px;
+}
+
+
+
+/* MODAL BACKGROUND */
+.edit-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    claiming: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* MODAL BOX */
+.edit-modal-content {
+    background: #fff;
+    width: 320px;
+    padding: 20px;
+    border-radius: 12px;
+    animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+
+
+
+/* Footer submit */
+.footer {
+  width: 650px;
+  max-width: 95%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit-btn {
+  background: #2C6022;
+  color: #fff;
+  border: none;
+  padding: 10px 26px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+   text-decoration: none; /* remove underline */
+}
+
+.submit-btn:hover {
+  background: #2C6022;
+}
+
+

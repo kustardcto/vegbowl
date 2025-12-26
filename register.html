@@ -12,9 +12,8 @@
 
 
     <!-- Custom CSS -->
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="about.css">
+    
+    <link rel="stylesheet" href="register.css">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -23,24 +22,22 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <style>
-        body {
-            padding-top: 30px;
-        }
-    </style>
+
 </head>
+
+<style>
+    body {
+        padding-top: 30px;
+    }
+</style>
 
 <body>
 
-
     <!--  BORDER IMAGE BELOW NAVBAR -->
     <div class="nav-border"></div>
-
-
     <!-- =============================== NAVBAR =============================== -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
         <div class="container">
@@ -55,18 +52,17 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about_us.html">About Us</a></li>
 
+                    <!-- Meals Dropdown -->
                     
-                    <li class="nav-item"><a class="nav-link" href="meals.html">Meals Plan</a></li>
-                        
+                           
+                   <li class="nav-item"><a class="nav-link" href="meals.html">Meals Plan</a></li>         
 
                     <li class="nav-item"><a class="nav-link" href="catering.html">Catering</a></li>
-                    
                     <li class="nav-item"><a class="nav-link" href="contact_us.html">Contact Us</a></li>
                      <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
 
@@ -84,137 +80,58 @@
         </div>
     </nav>
 
-   <div class="nav-bottom-border"></div>
+   
+
+<div class="nav-bottom-border"></div>
+
+    <!----- register page-------->
+
+<div class="register-container">
     
-    <!-- =============================== HERO SECTION =============================== -->
+    <!-- LEFT FORM -->
+    <div class="register-form">
+        <div class="register-header">
+            <div class="icon">
+    <img src="img/log.png" alt="login icon">
+</div>
 
-    <section class="hero-header">
-        <div class="container">
-            <div class="row align-items-center">
 
-                <!-- LEFT SIDE -->
-                <div class="col-lg-6 hero-text">
-                    <h1 class="small-title  ">About Us</h1>
-                    <p style="font-size:25px;">The point of using Lorem Ipsum is that it has <br>a more-or-less normal distribution</p>
-                </div>
-
-                <!-- RIGHT SIDE IMAGES -->
-                <div class="col-lg-6">
-                    <div class="hero-images">
-                        <div class="img-box">
-                            <img src="img/about1.jpg" alt="">
-                        </div>
-                        <div class="img-box">
-                            <img src="img/about2.jpg" alt="">
-                        </div>
-                        <div class="img-box">
-                            <img src="img/about3.jpeg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <h2>Login to your Account</h2>
+            <p>Enter Your Registered Email Address and Password to Login!</p>
         </div>
-    </section>
 
+        <form>
+            <label>Name</label>
+            <input type="text" placeholder="sampledemo@domain.com">
 
+            <label>Email Id / Phone Number</label>
+            <input type="text" placeholder="sampledemo@domain.com">
 
-    <!----------- ABOUT ---------------- -->
+            <label>OTP</label>
+            <input type="text" placeholder="123456" class="otp">
 
-    <section class="about-section text-center py-5">
-        <div class="container">
-            <h3 class="text-warning" style="margin-bottom:5px;  font-size: 50px;">About</h3>
-           <h1>
-           <span style="color: green;  font-size: 50px;">Veg</span>
-           <span class="text-warning  font-size: 50px;" >Bowl</span>
-           <span style="color: green;  font-size: 50px;">Cloud Kitchen</span>
-           </h1>
+            <label>Password</label>
+            <input type="password" placeholder="********">
 
-            <p class="mt-3">
-                At Veg Bowl, we serve freshly cooked vegetarian meals made with authentic flavors, premium ingredients,
-                and the warmth of home. Whether daily meals, monthly subscriptions, or weekend specials — every bowl
-                brings you
-                comfort, freshness, and satisfaction.Our chefs prepare a variety of vegetarian meals inspired by local
-                flavors and home-style cooking.
-                With customizable meal plans, catering options, and weekly specials, we ensure a perfect blend of
-                nutrition, freshness, and authentic taste in every serving.
+            <label>Confirm Password</label>
+            <input type="password" placeholder="********">
+
+            <button type="submit">Register Now</button>
+            <p class="login">
+                have any account? <a href="login.html">login</a>
             </p>
-
-
-        </div>
-    </section>
-
-    <section class="about-section container my-5">
-
-        <div class="cards-wrap">
-
-            <!-- Card 1 -->
-            <div class="info-card">
-                <img src="img/a1.png" class="info-img" alt="">
-                <div class="card-body">
-                    <h3 class="title">Who Are We ?</h3>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
-                    </p>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="info-card">
-                <img src="img/a2.png" class="info-img" alt="">
-                <div class="card-body">
-                    <h3 class="title green">Our Values & Approach</h3>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-        </div>
-        </div>
-    </section>
-
-    <div class="d-flex justify-content-center gap-3 mt-3 flex-wrap">
-        <div class="contact-btn"><i class="fa fa-phone"></i> +91 91234 56789</div>
-        <div class="contact-btn"><i class="fa fa-envelope"></i> info@vegbowl.com</div>
+        </form>
     </div>
 
-
-
-
-
-
-
-
-    <!----- join with us        -------------->
-    <div class="title-with-lines">
-        <span>Please join us with me</span>
+    <!-- RIGHT IMAGE -->
+    <div class="register-image">
+        <img src="img/reg.jpg" alt="Food Image">
     </div>
 
-    <section class="social-follow-section">
-
-        <div class="social-card">
-            <img src="img/fb1.png" class="social-img" alt="">
-            <div class="follow-badge">Follow Now</div>
-        </div>
-
-        <div class="social-card">
-            <img src="img/insta1.png" class="social-img" alt="">
-            <div class="follow-badge">Follow Now</div>
-        </div>
-
-        <div class="social-card">
-            <img src="img/twitter.png" class="social-img" alt="">
-            <div class="follow-badge">Follow Now</div>
-        </div>
-
-    </section>
+</div>
 
 
+    
 
     <!-- =============================== NEWSLETTER =============================== -->
     <section class="newsletter-wrapper">

@@ -20,7 +20,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(255, 255, 255, 0.6);
+   
     pointer-events: none;
     /* ✅ important */
 }
@@ -54,12 +54,19 @@
 }
 
 
+
+
+
+
+
 /*******************************
     NAVBAR BASE STYLE
 *******************************/
 
 /* Add space between nav-border and nav-links */
 .navbar {
+    position: relative;
+    z-index: 10;
     margin-top: 5px;
     /* space under border */
     background: #fff !important;
@@ -265,7 +272,6 @@
 
 
 
-
 /* ================================
    TABLET RESPONSIVE (≤ 991px)
 ================================ */
@@ -388,341 +394,527 @@ body {
 }
 
 
-
-
-/*************************** wraper page**************************************/
-
-
-
-/* ================= PAGE WRAPPER ================= */
-.page-wrapper {
+/* MAIN CONTAINER */
+.login-container {
+    width: 90%;
+    max-width: 1200px;
     display: flex;
-    gap: 5px;
-    padding: 60px 40px;
-    max-width: 1450px;
-    width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    align-items: flex-start;
-    margin-right: -80px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 150px;
+    margin-left: 190px;
 }
 
-/* ================= LEFT COLUMN ================= */
-.left-column {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    width: 600px;
-    /*position: relative;
-            left: 110px;*/
-}
-
-.highlight-image,
-.rounded-image {
-    width: 500px;
-    height: 260px;
-    overflow: hidden;
-    border-radius: 40px;
-}
-
-.highlight-image {
-    border: 8px solid #d0e8b0;
-}
-
-.rounded-image {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.container-image {
-    width: 100%;
-    height: 100%;
-    background-color: #e0e0e0;
-    position: relative;
-}
-
-.container-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 30px;
-}
-
-.image-text {
-    position: absolute;
-    left: 28px;
-    top: 45%;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.catering-text {
-    position: relative;
-    left: 0px;
-    top: 0;
-    font-size: 38px;
-}
-
-/* ================= RIGHT COLUMN ================= */
-.right-column {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    /*position: relative;
-            left: 70px;*/
-    align-items: flex-start;
-    margin-left: -10px;
-}
-
-/* Header */
-.header {
-    color: green;
-    text-align: left;
-    width: 100%;
-    margin-top: 50px;
-}
-
-.header h2 {
-    margin: 0;
-    font-size: 22px;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 40px;
-}
-
-.header p {
-    margin-top: 4px;
-    color: #000;
-}
-
-/* ================= FORM ================= */
-.form-container {
-    width: 100%;
-    padding: 0;
-    height: 64px;
-    max-width: 500px;
-    border-radius: 14px;
-    left: 961px;
-    top: 453px;
-}
-
-.row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-
-}
-
-.full-width {
-    margin-bottom: 10px;
-}
-
-.half-width {
+/* LEFT FORM */
+.login-box {
     flex: 1;
+    max-width: 500px;
+
+    position: relative;
+    top: -80px;
 }
 
-.input-group {
-    position: relative;
-    border: 1.5px solid #7cb342;
+
+
+.login-header {
+    margin-bottom: 30px;
+    margin-left: 70px;
+}
+
+.login-header .icon {
+    display: flex;
+    justify-content: center;
+    /* center horizontally */
+    margin-bottom: -5px;
+}
+
+.login-header .icon img {
+    width: 80px;
+    /* 🔥 icon width */
+    height: 70px;
+    /* 🔥 icon height */
+    margin-left: -20px;
+
+}
+
+
+.login-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-left: 50px;
+}
+
+.login-header p {
+    color: #555;
+    font-size: 18px;
+    white-space: nowrap;
+    margin-left: -50px;
+}
+
+/* FORM */
+form label {
+    width: 750px;
+    height: 30px;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+    margin-top: 18px;
+}
+
+form input {
+    width: 100%;
+    padding: 14px;
     border-radius: 8px;
-    height: 50px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+/* REMEMBER ME */
+.remember {
     display: flex;
     align-items: center;
-    background: #fff;
-}
-
-.full-width,
-.row {
-    display: flex;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.input-group input {
-    width: 100%;
-    height: 100%;
-    padding: 0 50px 0 15px;
-    /* space for icon */
-    border: none;
-    outline: none;
-    background: transparent;
-    font-size: 16px;
-    color: #a0a0a0;
-    font-weight: normal;
-    cursor: text;
-}
-
-.input-group input:valid {
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
     color: #000;
 }
 
-/* Icon images inside input */
-.icon {
+/* Hide default checkbox */
+.remember input {
     position: absolute;
-    right: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
+    opacity: 0;
+    cursor: pointer;
 }
 
-.icon img {
+/* Custom checkbox */
+.checkmark {
     width: 20px;
     height: 20px;
-    object-fit: contain;
+    border: 1.5px solid #888;
+    border-radius: 6px;
+    display: inline-block;
 }
 
-/* ================= SELECT GROUP ================= */
-.select-group {
-    position: relative;
-    border: 1.5px solid #7cb342;
-    border-radius: 8px;
-    height: 50px;
-    background: #fff;
+/* Checked state */
+.remember input:checked+.checkmark {
+    background-color: #2f5d1f;
+    border-color: #2f5d1f;
 }
 
-.select-group select {
-    width: 100%;
-    height: 100%;
-    padding: 0 40px 0 15px;
-    /* space for arrow image */
-    border: none;
-    outline: none;
-    appearance: none;
-    background: transparent;
-    font-size: 16px;
-    color: #a0a0a0;
-    cursor: pointer;
-}
-
-.select-group select:valid {
-    color: #000;
-}
-
-.select-group img {
+/* Check icon */
+.remember input:checked+.checkmark::after {
+    content: "✔";
+    color: #fff;
+    font-size: 12px;
     position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 22px;
-    height: 22px;
-    pointer-events: none;
+    left: 5px;
+    top: 1px;
 }
 
-/* ================= BUTTON ================= */
-.button button {
-    background-color: #2c6022;
-    color: white;
-    border: none;
-    padding: 18px 40px 22px 65px;
+/* FORGOT PASSWORD */
+.options .forgot {
+    color: #2a4cff;
+    /* 🔥 blue like image */
+    text-decoration: none;
+    font-weight: 500;
     font-size: 20px;
+    white-space: nowrap;
+
+}
+
+.options .forgot:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
     border-radius: 8px;
+    background: #256428;
+    color: #fff;
+    font-size: 16px;
     cursor: pointer;
-    position: relative;
-    border-top-left-radius: 14px;
-    border-bottom-right-radius: 14px;
-    width: 230px;
-    height: 24;
-    opacity: 1;
-    top: px;
-    left: 0px;
+}
 
+button:hover {
+    background: #244917;
+}
 
+.signup {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.signup a {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* RIGHT IMAGE */
+.image-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    width: 709px;
+    height: 590px;
+    aspect-ratio: 709/933;
+
+    margin-top: -180px;
+    /* 🔥 MOVE IMAGE UP */
 }
 
 
-.button button::before {
-    content: "➜";
-    position: absolute;
-    left: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 35px;
-    /* continuous animation */
-    animation: arrowForward 2s ease-in-out infinite;
-}
-/* LEFT IMAGE ACTIVE EFFECT */
-.catering-card {
-    opacity: 0.5;
-    cursor: pointer;
-    transition: 0.3s ease;
+.image-box img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 40px;
+    object-fit: cover;
 }
 
-.catering-card.active,
-.catering-card:hover {
-    opacity: 1;
-}
-
-/* RIGHT CONTENT SWITCH */
-.catering-content {
-    display: none;
-}
-
-.catering-content.active {
-    display: block;
-}
-
-
-/* On hover or click, trigger the animation 
-.button button:hover::before {
-    animation: arrowForward 0.5s linear infinite;
-}
-    */
-
-@keyframes arrowForward {
-    0% {
-        transform: translateY(-50%) translateX(0);
-        opacity: 1;
+/* ============================================
+   TABLET RESPONSIVE (≤ 991px)
+============================================ */
+@media (max-width: 991px) {
+    .login-container {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 200px;
+        padding: 0 30px;
+        gap: 40px;
     }
 
-    80% {
-        transform: translateY(-50%) translateX(10px);
-        /* move forward */
-        opacity: 1;
+    .login-box {
+        max-width: 100%;
+        top: 0;
     }
 
-    100% {
-        transform: translateY(-50%) translateX(0);
-        /* reset to start */
-        opacity: 1;
+    .login-header {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .login-header h2 {
+        margin-left: 0;
+        font-size: 26px;
+    }
+
+    .login-header p {
+        margin-left: 0;
+        white-space: normal;
+        font-size: 16px;
+    }
+
+    .login-header .icon img {
+        margin-left: 0;
+    }
+
+    .image-box {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+
+    .image-box img {
+        max-width: 100%;
     }
 }
 
-
+/* ============================================
+   MOBILE RESPONSIVE (≤ 768px) - BEST DESIGN
+============================================ */
 @media (max-width: 768px) {
-    .button button {
-        width: 100%;
-        font-size: 18px;
-        padding: 15px 20px 15px 50px;
-    }
-}
 
-@media (max-width: 1100px) {
-    .page-wrapper {
+    /* Nav Second Border - hide on mobile */
+    .nav-second-border {
+        display: none;
+    }
+
+    /* ========== LOGIN CONTAINER ========== */
+    .login-container {
         flex-direction: column;
-        align-items: center;
-    }
-
-    .left-column,
-    .right-column {
         width: 100%;
-        align-items: center;
+        margin: 0;
+        margin-top: 30px;
+        padding: 0 20px;
+        gap: 30px;
     }
 
-    .header {
+    /* ========== LOGIN BOX ========== */
+    .login-box {
+        max-width: 100%;
+        top: 0;
+        padding: 0;
+        order: 1;
+    }
+
+    /* ========== LOGIN HEADER - CENTERED ========== */
+    .login-header {
+        margin-left: 0;
+        margin-bottom: 25px;
         text-align: center;
     }
 
-    .button {
+    .login-header .icon {
+        justify-content: center;
+    }
+
+    .login-header .icon img {
+        width: 65px;
+        height: 58px;
+        margin-left: 0;
+    }
+
+    .login-header h2 {
+        font-size: 22px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .login-header p {
+        font-size: 14px;
+        margin-left: 0;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.5;
+        color: #666;
+    }
+
+    /* ========== FORM STYLING ========== */
+    form label {
+        width: 100%;
+        height: auto;
+        font-size: 15px;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+
+    form input {
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 15px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+    }
+
+    form input:focus {
+        border-color: #2f5d1f;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(47, 93, 31, 0.1);
+    }
+
+    /* ========== OPTIONS ROW (Remember + Forgot) ========== */
+    .options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 16px;
+    }
+
+    .options .forgot {
+        font-size: 15px;
+        align-self: flex-end;
+    }
+
+    .remember {
+        font-size: 14px;
+    }
+
+    .checkmark {
+        width: 18px;
+        height: 18px;
+        border-radius: 5px;
+    }
+
+    /* ========== SUBMIT BUTTON ========== */
+    .login-box button {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 10px;
+        margin-top: 20px;
+        background: linear-gradient(135deg, #2f5d1f 0%, #3a7428 100%);
+        transition: all 0.3s ease;
+    }
+
+    .login-box button:active {
+        transform: scale(0.98);
+    }
+
+    /* ========== SIGNUP LINK ========== */
+    .signup {
+        font-size: 15px;
+        margin-top: 18px;
+        text-align: center;
+    }
+
+    .signup a {
+        color: #2f5d1f;
+        font-weight: 700;
+    }
+
+    /* ========== IMAGE BOX ========== */
+    .image-box {
+        width: 100%;
+        max-width: 100%;
+        height: 220px;
+        margin-top: 10px;
+        order: 2;
+        padding: 0;
+    }
+
+    .image-box img {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+
+    /* ========== NEWSLETTER SECTION ========== */
+    .newsletter-wrapper {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: -30px;
+        margin-top: 40px;
+    }
+
+    .newsletter-box {
+        flex-direction: column;
+        padding: 20px 18px;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .newsletter-box h4 {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .newsletter-form .form-control {
+        width: 100%;
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+    .newsletter-wrapper .submit-btn {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+
+    /* ========== FOOTER ADJUSTMENTS ========== */
+    .footer-section .row {
+        flex-wrap: wrap;
+    }
+
+    .footer-col {
+        width: 100%;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .footer-content {
+        margin-top: 30px;
+    }
+
+    .footer-logo {
+        margin: 0 auto 15px;
+        display: block;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-links {
         text-align: center;
     }
 }
+
+/* ============================================
+   EXTRA SMALL DEVICES (≤ 480px)
+============================================ */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 0 15px;
+        margin-top: 20px;
+    }
+
+    .login-header h2 {
+        font-size: 20px;
+    }
+
+    .login-header p {
+        font-size: 13px;
+    }
+
+    .login-header .icon img {
+        width: 55px;
+        height: 48px;
+    }
+
+    form label {
+        font-size: 14px;
+    }
+
+    form input {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .options .forgot {
+        font-size: 14px;
+    }
+
+    .login-box button {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .signup {
+        font-size: 14px;
+    }
+
+    .image-box {
+        height: 180px;
+    }
+
+    .newsletter-wrapper {
+        width: 92%;
+    }
+
+    .newsletter-box h4 {
+        font-size: 16px;
+    }
+}
+
+
+
 
 
 /* ------------------------------------
@@ -730,15 +922,9 @@ body {
 ------------------------------------ */
 .newsletter-wrapper {
     width: 100%;
-    max-width: 1450px;
     position: relative;
     z-index: 10;
     margin-bottom: -40px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 40px;
-    box-sizing: border-box;
-
 }
 
 .newsletter-box {
@@ -879,6 +1065,8 @@ hr {
 /**** footer close ****/
 /****footer border***/
 
+
+
 .footer-bottom-border {
     width: 100%;
     height: 40px;                 /* height of visible green line */
@@ -891,6 +1079,8 @@ hr {
 
     background-color: #f1ebe4;
 }
+
+
 
 /* ===================== MOBILE RESPONSIVE ONLY ===================== */
 @media (max-width: 768px) {
@@ -934,27 +1124,8 @@ hr {
         gap: 0px !important;
     }
 
-    .navbar {
-        padding-bottom: 10px !important;
-    }
-
-    .navbar-brand {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
-    .navbar .container {
-        flex-wrap: wrap;
-    }
-
-    .nav-link {
-        font-size: 16px;
-    }
-
-    .logo-img {
-        height: 60px !important;
-    }
-
+    /* Note: Navbar mobile styles are defined earlier in this file
+       at lines 260-371 to match home.html exactly */
 
 
 
@@ -1061,113 +1232,5 @@ hr {
 
     .social-icons {
         justify-content: left;
-    }
-}
-
-
-/* ================= MOBILE & TABLET RESPONSIVE ONLY ================= */
-
-/* Tablets & below */
-@media (max-width: 1024px) {
-
-    .page-wrapper {
-        flex-direction: column;
-        padding: 30px 20px;
-        margin-right: 0;     /* remove negative margin on mobile */
-        gap: 40px;
-    }
-
-    .left-column,
-    .right-column {
-        width: 100%;
-        align-items: center;
-    }
-
-    /* Images scale down nicely */
-    .highlight-image,
-    .rounded-image {
-        width: 100%;
-        max-width: 500px;
-        height: 240px;
-    }
-
-    .container-image img {
-        border-radius: 30px;
-    }
-
-    /* Header center on mobile */
-    .header {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .header h1 {
-        font-size: 32px;
-    }
-
-    .header h2 {
-        font-size: 20px;
-    }
-
-    .header p {
-        font-size: 15px;
-    }
-
-    /* Form container responsive */
-    .form-container {
-        width: 100%;
-        max-width: 500px;
-    }
-}
-
-/* Phones */
-@media (max-width: 768px) {
-
-    /* Stack form rows vertically */
-    .row {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .half-width {
-        width: 100%;
-    }
-
-    .input-group,
-    .select-group {
-        height: 48px;
-    }
-
-    .input-group input,
-    .select-group select {
-        font-size: 15px;
-    }
-
-    /* Button full width */
-    .button button {
-        width: 100%;
-        font-size: 18px;
-        padding: 16px 20px 16px 55px;
-    }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-
-    .header h1 {
-        font-size: 26px;
-    }
-
-    .catering-text {
-        font-size: 28px;
-    }
-
-    .image-text {
-        font-size: 18px;
-    }
-
-    .highlight-image,
-    .rounded-image {
-        height: 200px;
     }
 }

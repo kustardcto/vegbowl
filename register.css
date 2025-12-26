@@ -54,12 +54,40 @@
 }
 
 
+.nav-second-border {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 120px;
+    margin-top: -160px;
+    position: relative;
+    /* The base color */
+}
+
+.nav-second-border::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-size: contain;
+    opacity: 0.2;
+    /* This lightens/blends the image with the pink background */
+    z-index: 1;
+}
+
+
+
+
 /*******************************
     NAVBAR BASE STYLE
 *******************************/
 
 /* Add space between nav-border and nav-links */
 .navbar {
+    position: relative;
+    z-index: 10;
     margin-top: 5px;
     /* space under border */
     background: #fff !important;
@@ -228,8 +256,6 @@
     height: auto;
 }
 
-
-
 .nav-bottom-border {
     width: 100%;                 /* ✅ responsive */
     height: 18px;
@@ -261,9 +287,6 @@
         height: 10px;
     }
 }
-
-
-
 
 
 /* ================================
@@ -388,341 +411,317 @@ body {
 }
 
 
-
-
-/*************************** wraper page**************************************/
-
-
-
-/* ================= PAGE WRAPPER ================= */
-.page-wrapper {
-    display: flex;
-    gap: 5px;
-    padding: 60px 40px;
-    max-width: 1450px;
+/* MAIN CONTAINER */
+.register-container {
     width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    align-items: flex-start;
-    margin-right: -80px;
-}
-
-/* ================= LEFT COLUMN ================= */
-.left-column {
+    max-width: 100%;
+    background: #ffffff;
     display: flex;
-    flex-direction: column;
-    gap: 30px;
-    width: 600px;
-    /*position: relative;
-            left: 110px;*/
-}
-
-.highlight-image,
-.rounded-image {
-    width: 500px;
-    height: 260px;
+    border-radius: 25px;
     overflow: hidden;
-    border-radius: 40px;
+
+
 }
 
-.highlight-image {
-    border: 8px solid #d0e8b0;
+.register-form {
+    flex: 1;
+    max-width: 650px;
+    /* ✅ limits width */
+    padding: 50px 60px;
+    margin-left: 150px;
 }
 
-.rounded-image {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+/* HEADER */
+.register-header {
+    margin-bottom: 35px;
 }
 
-.container-image {
+.register-header .icon {
+    display: flex;
+    justify-content: center;
+    /* center horizontally */
+    margin-bottom: -5px;
+}
+
+.register-header .icon img {
+    width: 80px;
+    /* 🔥 icon width */
+    height: 70px;
+    /* 🔥 icon height */
+    margin-left: -50px;
+
+}
+
+
+.register-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-left: 110px;
+}
+
+.register-header p {
+    color: #555;
+    font-size: 18px;
+    white-space: nowrap;
+    margin-left: 30px;
+}
+
+/* FORM */
+.register-form form label {
+    width: 300px;
+    height: 20px;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+    margin-top: 18px;
+}
+
+.register-form form input {
     width: 100%;
-    height: 100%;
-    background-color: #e0e0e0;
-    position: relative;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 18px;
 }
 
-.container-image img {
+/* INPUT FOCUS */
+.register-form form input:focus {
+    outline: none;
+    border-color: #2f5d1f;
+}
+
+/* OTP FIELD */
+.register-form form input.otp {
+    width: 150px;
+}
+
+/* BUTTON */
+.register-form form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background-color: #2f5d1f;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.register-form form button:hover {
+    background-color: #244a18;
+}
+
+.login {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.login a {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* RIGHT IMAGE CONTAINER */
+.register-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 420px;
+    /* ✅ image width control */
+    height: 800px;
+    /* 🔥 IMAGE HEIGHT */
+
+    margin-top: 50px;
+
+}
+
+.register-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 30px;
-}
-
-.image-text {
-    position: absolute;
-    left: 28px;
-    top: 45%;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.catering-text {
-    position: relative;
-    left: 0px;
-    top: 0;
-    font-size: 38px;
-}
-
-/* ================= RIGHT COLUMN ================= */
-.right-column {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    /*position: relative;
-            left: 70px;*/
-    align-items: flex-start;
-    margin-left: -10px;
-}
-
-/* Header */
-.header {
-    color: green;
-    text-align: left;
-    width: 100%;
-    margin-top: 50px;
-}
-
-.header h2 {
-    margin: 0;
-    font-size: 22px;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 40px;
-}
-
-.header p {
-    margin-top: 4px;
-    color: #000;
-}
-
-/* ================= FORM ================= */
-.form-container {
-    width: 100%;
-    padding: 0;
-    height: 64px;
-    max-width: 500px;
-    border-radius: 14px;
-    left: 961px;
-    top: 453px;
-}
-
-.row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-
-}
-
-.full-width {
-    margin-bottom: 10px;
-}
-
-.half-width {
-    flex: 1;
-}
-
-.input-group {
-    position: relative;
-    border: 1.5px solid #7cb342;
-    border-radius: 8px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    background: #fff;
-}
-
-.full-width,
-.row {
-    display: flex;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.input-group input {
-    width: 100%;
-    height: 100%;
-    padding: 0 50px 0 15px;
-    /* space for icon */
-    border: none;
-    outline: none;
-    background: transparent;
-    font-size: 16px;
-    color: #a0a0a0;
-    font-weight: normal;
-    cursor: text;
-}
-
-.input-group input:valid {
-    color: #000;
-}
-
-/* Icon images inside input */
-.icon {
-    position: absolute;
-    right: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-}
-
-.icon img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-}
-
-/* ================= SELECT GROUP ================= */
-.select-group {
-    position: relative;
-    border: 1.5px solid #7cb342;
-    border-radius: 8px;
-    height: 50px;
-    background: #fff;
-}
-
-.select-group select {
-    width: 100%;
-    height: 100%;
-    padding: 0 40px 0 15px;
-    /* space for arrow image */
-    border: none;
-    outline: none;
-    appearance: none;
-    background: transparent;
-    font-size: 16px;
-    color: #a0a0a0;
-    cursor: pointer;
-}
-
-.select-group select:valid {
-    color: #000;
-}
-
-.select-group img {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 22px;
-    height: 22px;
-    pointer-events: none;
-}
-
-/* ================= BUTTON ================= */
-.button button {
-    background-color: #2c6022;
-    color: white;
-    border: none;
-    padding: 18px 40px 22px 65px;
-    font-size: 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    position: relative;
-    border-top-left-radius: 14px;
-    border-bottom-right-radius: 14px;
-    width: 230px;
-    height: 24;
-    opacity: 1;
-    top: px;
-    left: 0px;
-
-
+    /* keeps aspect ratio */
+    border-radius: 40px;
+    margin-left: 80px;
 }
 
 
-.button button::before {
-    content: "➜";
-    position: absolute;
-    left: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 35px;
-    /* continuous animation */
-    animation: arrowForward 2s ease-in-out infinite;
-}
-/* LEFT IMAGE ACTIVE EFFECT */
-.catering-card {
-    opacity: 0.5;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
 
-.catering-card.active,
-.catering-card:hover {
-    opacity: 1;
-}
-
-/* RIGHT CONTENT SWITCH */
-.catering-content {
-    display: none;
-}
-
-.catering-content.active {
-    display: block;
-}
-
-
-/* On hover or click, trigger the animation 
-.button button:hover::before {
-    animation: arrowForward 0.5s linear infinite;
-}
-    */
-
-@keyframes arrowForward {
-    0% {
-        transform: translateY(-50%) translateX(0);
-        opacity: 1;
-    }
-
-    80% {
-        transform: translateY(-50%) translateX(10px);
-        /* move forward */
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(-50%) translateX(0);
-        /* reset to start */
-        opacity: 1;
-    }
-}
-
-
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
-    .button button {
-        width: 100%;
-        font-size: 18px;
-        padding: 15px 20px 15px 50px;
-    }
-}
 
-@media (max-width: 1100px) {
-    .page-wrapper {
+    /* Register Container - Stack vertically on mobile */
+    .register-container {
         flex-direction: column;
-        align-items: center;
+        border-radius: 0;
+        padding: 0;
     }
 
-    .left-column,
-    .right-column {
+    /* Register Form - Reset margins and padding for mobile */
+    .register-form {
+        max-width: 100%;
+        margin-left: 0;
+        padding: 25px 20px;
+        order: 1;
+    }
+
+    /* Register Header - Center alignment for mobile */
+    .register-header {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .register-header .icon {
+        justify-content: center;
+    }
+
+    .register-header .icon img {
+        margin-left: 0;
+        width: 60px;
+        height: 55px;
+    }
+
+    .register-header h2 {
+        font-size: 22px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .register-header p {
+        font-size: 14px;
+        margin-left: 0;
+        white-space: normal;
+        text-align: center;
+    }
+
+    /* Form Fields - Full width for mobile */
+    .register-form form label {
         width: 100%;
-        align-items: center;
+        font-size: 16px;
+        margin-top: 14px;
     }
 
-    .header {
-        text-align: center;
+    .register-form form input {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
     }
 
-    .button {
+    .register-form form input.otp {
+        width: 100%;
+    }
+
+    /* Submit Button */
+    .register-form form button {
+        padding: 12px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    /* Login Link */
+    .login {
+        font-size: 16px;
+    }
+
+    /* Register Image - Display below form on mobile */
+    .register-image {
+        max-width: 100%;
+        height: 250px;
+        margin-top: 20px;
+        order: 2;
+        padding: 0 20px;
+    }
+
+    .register-image img {
+        margin-left: 0;
+        border-radius: 20px;
+    }
+
+    /* Newsletter Mobile Responsiveness */
+    .newsletter-wrapper {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: -30px;
+    }
+
+    .newsletter-box {
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .newsletter-box h4 {
         text-align: center;
+        font-size: 20px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .newsletter-form .form-control {
+        width: 100%;
+        padding: 12px 15px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 12px 20px;
     }
 }
+
+/* Extra Small Devices (< 480px) */
+@media (max-width: 480px) {
+    .register-form {
+        padding: 20px 15px;
+    }
+
+    .register-header h2 {
+        font-size: 20px;
+    }
+
+    .register-header p {
+        font-size: 13px;
+    }
+
+    .register-form form label {
+        font-size: 14px;
+    }
+
+    .register-form form input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .register-form form button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .login {
+        font-size: 14px;
+    }
+
+    .register-image {
+        height: 200px;
+        padding: 0 15px;
+    }
+
+    .newsletter-wrapper {
+        width: 92%;
+    }
+}
+
+
+
 
 
 /* ------------------------------------
@@ -730,15 +729,9 @@ body {
 ------------------------------------ */
 .newsletter-wrapper {
     width: 100%;
-    max-width: 1450px;
     position: relative;
     z-index: 10;
     margin-bottom: -40px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 40px;
-    box-sizing: border-box;
-
 }
 
 .newsletter-box {
@@ -879,6 +872,7 @@ hr {
 /**** footer close ****/
 /****footer border***/
 
+
 .footer-bottom-border {
     width: 100%;
     height: 40px;                 /* height of visible green line */
@@ -891,6 +885,7 @@ hr {
 
     background-color: #f1ebe4;
 }
+
 
 /* ===================== MOBILE RESPONSIVE ONLY ===================== */
 @media (max-width: 768px) {
@@ -934,27 +929,8 @@ hr {
         gap: 0px !important;
     }
 
-    .navbar {
-        padding-bottom: 10px !important;
-    }
-
-    .navbar-brand {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
-    .navbar .container {
-        flex-wrap: wrap;
-    }
-
-    .nav-link {
-        font-size: 16px;
-    }
-
-    .logo-img {
-        height: 60px !important;
-    }
-
+    /* Note: Navbar mobile styles are defined earlier in this file
+       at lines 260-371 to match home.html and login.html exactly */
 
 
 
@@ -1061,113 +1037,5 @@ hr {
 
     .social-icons {
         justify-content: left;
-    }
-}
-
-
-/* ================= MOBILE & TABLET RESPONSIVE ONLY ================= */
-
-/* Tablets & below */
-@media (max-width: 1024px) {
-
-    .page-wrapper {
-        flex-direction: column;
-        padding: 30px 20px;
-        margin-right: 0;     /* remove negative margin on mobile */
-        gap: 40px;
-    }
-
-    .left-column,
-    .right-column {
-        width: 100%;
-        align-items: center;
-    }
-
-    /* Images scale down nicely */
-    .highlight-image,
-    .rounded-image {
-        width: 100%;
-        max-width: 500px;
-        height: 240px;
-    }
-
-    .container-image img {
-        border-radius: 30px;
-    }
-
-    /* Header center on mobile */
-    .header {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .header h1 {
-        font-size: 32px;
-    }
-
-    .header h2 {
-        font-size: 20px;
-    }
-
-    .header p {
-        font-size: 15px;
-    }
-
-    /* Form container responsive */
-    .form-container {
-        width: 100%;
-        max-width: 500px;
-    }
-}
-
-/* Phones */
-@media (max-width: 768px) {
-
-    /* Stack form rows vertically */
-    .row {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .half-width {
-        width: 100%;
-    }
-
-    .input-group,
-    .select-group {
-        height: 48px;
-    }
-
-    .input-group input,
-    .select-group select {
-        font-size: 15px;
-    }
-
-    /* Button full width */
-    .button button {
-        width: 100%;
-        font-size: 18px;
-        padding: 16px 20px 16px 55px;
-    }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-
-    .header h1 {
-        font-size: 26px;
-    }
-
-    .catering-text {
-        font-size: 28px;
-    }
-
-    .image-text {
-        font-size: 18px;
-    }
-
-    .highlight-image,
-    .rounded-image {
-        height: 200px;
     }
 }

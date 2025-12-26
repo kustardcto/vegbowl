@@ -60,21 +60,14 @@
                     <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about_us.html">About Us</a></li>
 
-                    <!-- Meals Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Meals Plan</a>
-                        <ul class="dropdown-menu   m-0">
-                            <li><a class="dropdown-item" href="veg_meals.html">Daily Meals</a></li>
-                            <li><a class="dropdown-item" href="#">Corporate Orders</a></li>
-                            <li><a class="dropdown-item" href="#">Catering</a></li>
-                            <li><a class="dropdown-item" href="#">Snacks</a></li>
-                            <li><a class="dropdown-item" href="#">Old People Orders</a></li>
-                            <li><a class="dropdown-item" href="#">Pickles & Powders</a></li>
-                        </ul>
-                    </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="meals.html">Meals Plan</a></li>
+
+
+                    <li class="nav-item"><a class="nav-link" href="catering.html">Catering</a></li>
+
                     <li class="nav-item"><a class="nav-link" href="contact_us.html">Contact Us</a></li>
+                     <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
 
                     <li class="nav-item ms-lg-3">
                         <a class="pickles-btn" href="#">
@@ -91,6 +84,7 @@
     </nav>
 
 
+  <div class="nav-bottom-border"></div>
 
 
 
@@ -125,39 +119,57 @@
 
     <!-- =============================== MEAL PLANS BOXES =============================== -->
 
-    <section class="meal-ticket-section py-5">
-        <div class="container d-flex flex-wrap gap-4 justify-content-center">
+   <section class="meal-ticket-section py-5">
+    <div class="container">
 
-            <!-- MONTHLY TICKET -->
-            <div class="meal-ticket bg-monthly">
-                <img src="img/monthly.jpeg" alt="Monthly Meal Box">
-                <div class="meal-ticket-text">
-                    <p class="subtitle">Monthly</p>
-                    <h2 class="title">Meal<br>Box</h2>
+        <div class="swiper mealSwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="meal-ticket bg-monthly">
+                        <img src="img/monthly.jpeg">
+                        <div class="meal-ticket-text">
+                            <p class="subtitle">Monthly</p>
+                            <h2 class="title">Meal<br>Box</h2>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- WEEKLY TICKET -->
-            <div class="meal-ticket bg-weekly">
-                <img src="img/weeklmeal.jpg" alt="Weekly Meal Box">
-                <div class="meal-ticket-text">
-                    <p class="subtitle">Weekly</p>
-                    <h2 class="title">Meal<br>Box</h2>
+                <div class="swiper-slide">
+                    <div class="meal-ticket bg-weekly">
+                        <img src="img/weeklmeal.jpg">
+                        <div class="meal-ticket-text">
+                            <p class="subtitle">Weekly</p>
+                            <h2 class="title">Meal<br>Box</h2>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- WEEKEND TICKET -->
-            <div class="meal-ticket bg-weekend">
-                <img src="img/weekend.jpeg" alt="Weekend Feast Meal">
-                <div class="meal-ticket-text">
-                    <p class="subtitle">Weekend</p>
-                    <h2 class="title">Feast<br>Meal</h2>
+                <div class="swiper-slide">
+                    <div class="meal-ticket bg-weekend">
+                        <img src="img/weekend.jpeg">
+                        <div class="meal-ticket-text">
+                            <p class="subtitle">Old</p>
+                            <h2 class="title">People<br>Meal</h2>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
+                <div class="swiper-slide">
+                    <div class="meal-ticket bg-weekend">
+                        <img src="img/weekend.jpeg">
+                        <div class="meal-ticket-text">
+                            <p class="subtitle">Snacks</p>
+                            <h2 class="title">Time<br>Favorites</h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </section>
 
+    </div>
+</section>
 
 
     <!----------- ABOUT ---------------- -->
@@ -165,11 +177,11 @@
     <section class="about-section text-center py-5">
         <div class="container">
             <h3 class="text-warning" style="margin-bottom:5px;  font-size: 50px;">About</h3>
-           <h1>
-           <span style="color: green;  font-size: 50px;">Veg</span>
-           <span class="text-warning  font-size: 50px;" >Bowl</span>
-           <span style="color: green;  font-size: 50px;">Cloud Kitchen</span>
-           </h1>
+            <h1>
+                <span style="color: green;  font-size: 50px;">Veg</span>
+                <span class="text-warning  font-size: 50px;">Bowl</span>
+                <span style="color: green;  font-size: 50px;">Cloud Kitchen</span>
+            </h1>
 
 
             <p class="mt-3">
@@ -398,6 +410,47 @@
             padding-top: 30px;
         }
     </style>
+
+     
+               
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const mealSwiper = new Swiper(".mealSwiper", {
+      slidesPerView: 3,          // 👈 KEY POINT
+      spaceBetween: 20,
+      loop: true,
+
+      autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+      },
+
+      allowTouchMove: true,
+      simulateTouch: true,
+      grabCursor: true,
+
+      breakpoints: {
+          0: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          992: { slidesPerView: 3 }
+      }
+  });
+
+  // Pause autoplay on hover (desktop)
+  const swiperEl = document.querySelector(".mealSwiper");
+  swiperEl.addEventListener("mouseenter", () => mealSwiper.autoplay.stop());
+  swiperEl.addEventListener("mouseleave", () => mealSwiper.autoplay.start());
+
+});
+</script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
 </body>
 

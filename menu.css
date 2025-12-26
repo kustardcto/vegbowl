@@ -1,393 +1,4 @@
-.nav-border {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 30px;
-    z-index: 9999;
-    background-image: url("img/img1.png");
-    background-repeat: repeat-x;
-    background-size: 100%;
-    position: relative;
-}
 
-/* White overlay to lighten bg image */
-.nav-border::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    opacity: 0.6;
-    /* lighten image */
-    z-index: 1;
-    /* FIX: Do not send it behind */
-}
-
-
-
-.montserrat-uniquifier {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-}
-
-
-/*******************************
-    NAVBAR BASE STYLE
-*******************************/
-
-/* Add space between nav-border and nav-links */
-.navbar {
-    margin-top: 5px;
-    /* space under border */
-    background: #fff !important;
-    padding-top: 0px !important;
-    /* extra space above menu links */
-    padding-bottom: 15px !important;
-}
-
-
-/* LOGO */
-.logo-img {
-    height: 77px !important;
-    /* change height here */
-    width: auto !important;
-    /* keep proportions */
-    object-fit: contain !important;
-    display: block !important;
-}
-
-
-
-
-.logo-tagline {
-    font-size: 12px;
-    color: #4CAF50;
-    margin-top: -20px;
-
-    font-weight: 600;
-}
-
-
-/*******************************
-    NAV LINKS
-*******************************/
-.nav-link {
-    /* Horizontal spacing for desktop links */
-    margin: 1 9px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #2E7D32 !important;
-    position: relative;
-    transition: 0.3s;
-}
-
-/* Make logo + menu perfectly aligned horizontally */
-.navbar .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.navbar-brand {
-    margin-left: 85px !important;
-    /* Moves logo to the right */
-    margin-right: 10px !important;
-    /* Keeps gap before menu */
-}
-
-
-
-.navbar-nav {
-    margin-left: 30px !important;
-    /* Moves the menu closer */
-}
-
-.navbar-brand {
-    margin-right: 290px !important;
-    /* Reduces the gap from the logo */
-}
-
-
-
-
-/* YELLOW UNDERLINE */
-.nav-link::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 3px;
-
-    left: 0;
-    bottom: -6px;
-    border-radius: 5px;
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
-}
-
-.nav-link:hover {
-    color: #f8b400 !important;
-}
-
-/*******************************
-    DROPDOWN
-*******************************/
-.dropdown-menu {
-    border-radius: 12px;
-    padding: 10px 0;
-    min-width: 200px;
-    border: 1px solid #e5e5e5;
-    margin-top: 12px !important;
-}
-
-.dropdown-item {
-    padding: 12px 20px;
-    transition: 0.3s;
-}
-
-.dropdown-item:hover {
-    background: #f8b400;
-    color: none !important;
-    padding-left: 28px;
-}
-
-/* Add custom dropdown arrow on the RIGHT */
-.dropdown-toggle {
-    position: relative;
-    padding-right: 25px;
-}
-
-/* Remove default bootstrap arrow & add custom one */
-.dropdown-toggle::after {
-    content: "▼";
-    font-size: 10px;
-    position: absolute;
-    left: 95px;
-    /* Keep arrow on right */
-    top: 50%;
-    transform: translateY(-50%);
-    border: none !important;
-    /* Removes yellow border/line */
-}
-
-
-
-
-
-/*******************************
-    PICKLES BUTTON
-*******************************/
-.pickles-btn {
-    background: #2E7D32;
-    color: white;
-    padding: 12px 22px;
-    border-radius: 6px;
-    font-size: 18px;
-    font-weight: 600;
-    transition: 0.3s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-}
-
-.pickles-btn:hover {
-    background: #256428;
-    color: white !important;
-}
-
-.cart-icon {
-    width: 27px;
-    color: white !important;
-    height: auto;
-}
-
-
-
-
-
-
-/********** HERO WRAPPER *****************/
-
-/* =============================== HERO SECTION =============================== */
-
-/* HERO HEADER */
-.hero-header {
-    padding: 80px 0;
-    background: url("img/banner_bg.png") no-repeat center center / cover;
-    position: relative;
-}
-
-/* TEXT AREA */
-.hero-text {
-    margin-bottom: 75px;
-    padding-left: 100px;
-    /* Move text right */
-}
-
-.hero-text .small-title {
-    color: #2e8c43;
-    font-size: 60px;
-    font-weight: 600px;
-    margin-bottom: 10px;
-}
-
-.hero-text p {
-    font-size: 22px;
-    margin-top: -10px;
-    font-weight: 500;
-    line-height: 1.2rem;
-}
-
-/* IMAGE ROW (RIGHT SIDE) */
-.hero-images {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-right: 80px;
-    /* moves it right */
-    margin-top: -80px;
-    /* moves image DOWN */
-
-}
-
-/* IMAGE BOX */
-.full-banner {
-    width: 600px;
-    height: 180px;
-    /* correct height */
-    object-fit: cover;
-    border-radius: 25px;
-    /* smooth corners */
-}
-
-@media (max-width: 1024px) {
-
-    /* NAVBAR */
-    .navbar-brand {
-        margin-left: 20px !important;
-        margin-right: 40px !important;
-    }
-
-    .navbar-nav {
-        margin-left: 0 !important;
-    }
-
-    .nav-link {
-        font-size: 16px;
-        margin: 0 8px;
-    }
-
-    /* HERO SECTION */
-    .hero-text {
-        padding-left: 30px;
-        margin-bottom: 40px;
-    }
-
-    .hero-text .small-title {
-        font-size: 42px;
-    }
-
-    .hero-text p {
-        font-size: 18px;
-    }
-
-    .hero-images {
-        padding-right: 30px;
-        margin-top: -30px;
-    }
-
-    .full-banner {
-        width: 480px;
-        height: auto;
-    }
-}
-
-
-@media (max-width: 768px) {
-
-    /* NAV BORDER */
-    .nav-border {
-        height: 20px;
-        background-size: cover;
-    }
-
-    /* NAVBAR */
-    .navbar {
-        margin-top: 0;
-        padding-bottom: 10px !important;
-    }
-
-    .navbar-brand {
-        margin-left: 10px !important;
-        margin-right: 0 !important;
-    }
-
-    .logo-img {
-        height: 55px !important;
-    }
-
-    .logo-tagline {
-        font-size: 10px;
-        margin-top: -10px;
-    }
-
-    .nav-link {
-        font-size: 16px;
-        text-align: center;
-    }
-
-    /* DROPDOWN ARROW FIX */
-    .dropdown-toggle::after {
-        left: auto;
-        right: 10px;
-    }
-
-    /* PICKLES BUTTON */
-    .pickles-btn {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    /* HERO SECTION */
-    .hero-header {
-        padding: 50px 0;
-    }
-
-    .hero-text {
-        padding-left: 15px;
-        margin-bottom: 25px;
-        text-align: center;
-    }
-
-    .hero-text .small-title {
-        font-size: 34px;
-    }
-
-    .hero-text p {
-        font-size: 16px;
-        line-height: 1.4rem;
-    }
-
-    .hero-images {
-        justify-content: center;
-        padding-right: 0;
-        margin-top: 10px;
-    }
-
-    .full-banner {
-        width: 100%;
-        height: auto;
-        border-radius: 18px;
-    }
-}
 
 
 
@@ -459,16 +70,17 @@
 .menu-section {
     padding: 40px 0;
     background: #ffffff;
-    width: 90%;
+    width: 70%;
     height: 90%;
-    margin-left: 65px;
+    margin-left: -30px;
 }
 
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 22px;
+    gap: 10px;
 }
+
 
 /* CARD */
 .menu-card {
@@ -528,74 +140,107 @@
 
 
 /*************** week bar **********************/
-.day-week-bar {
+.week-days {
+    width: 100%;
     display: flex;
-    align-items: center;
-    width: 87%;
-    gap: 20px;
-    margin-top: 30px;
-    margin-left: 80px;
-    margin-bottom: 30px;
+    justify-content: center;   /* center text */
+    margin-bottom: 20px; 
+    margin-left: -450px;      /* space below */
 }
 
-/* DAY BUTTONS */
+.week-days span {
+    font-size: 50px;
+    font-weight: 600;
+    color: #2f5d1f;
+   
+    padding: 8px 18px;
+    border-radius: 25px;
+    
+}
+
+
+
+.day-week-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 40px;
+}
+
 .day-tabs {
     display: flex;
     gap: 10px;
 }
 
 .day-tabs button {
-    padding: 10px 18px;
-    border-radius: 6px;
-    border: 1.5px solid #9e9e9e;
+    padding: 8px 14px;
+    border-radius: 20px;
+   
     background: #fff;
-    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+       transition: all 0.3s ease; /* 🔥 smooth hover */
+}
+
+/* Hover effect */
+.day-tabs button:hover {
+    background: #e8f3e5;
+    color: #2f5d1f;
+    transform: translateY(-2px);     /* slight lift */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* Active state */
+.day-tabs button.active {
+    background: green;
+    color: #fff;
+    border-color: green;
+  
+}
+
+/* Active + hover (keeps active color) */
+.day-tabs button.active:hover {
+    background: #1e7a1e;
+    transform: none;
+}
+
+/* Horizontal line */
+.line {
+   max-width: 40%; 
+    height: 1px;
+    background-color: #2f5d1f;
+    flex-grow: 1; /* take up remaining space */
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.pay-now-btn {
+    padding: 10px 40px;
+    background-color: #2f5d1f;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-/* ACTIVE DAY */
-.day-tabs button.active {
-    background: #ffc107;
-    border-color: #ffc107;
-    color: #000;
-    font-weight: 600;
-}
-
-/* HOVER */
-.day-tabs button:hover {
-    background: #f5f5f5;
-}
-
-/* WEEK TEXT + LINE */
-.week-line {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
-}
-
-.week-line span {
-    font-size: 22px;
-    font-weight: 600;
-    color: #2e7d32;
     white-space: nowrap;
+    text-decoration: none;   /* 🔥 removes underline */
+    display: inline-block;
+    margin-left: 20px;
 }
 
-.week-line .line {
-    height: 1px;
-    background: #6d6d6d;
-    width: 100%;
-    /* 👈 control width here */
-    margin-bottom: -50px;
+.pay-now-btn:hover {
+    background-color: #244a18;
 }
+
 
 /* ARROWS */
 .nav-arrows {
     display: flex;
-    gap: 8px;
+    gap: 385px;
+    margin-left: 100px;
+    margin-top: 10px;
 }
+
 
 .nav-arrows button {
     width: 36px;
@@ -613,21 +258,67 @@
 }
 
 /* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
+
+    /* WEEK TITLE */
+    .week-days {
+        margin-left: 0;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .week-days span {
+        font-size: 28px;
+        padding: 6px 14px;
+    }
+
+    /* DAY TABS */
     .day-week-bar {
+        margin-left: 0;
+    }
+
+    .day-tabs {
         flex-wrap: wrap;
-        gap: 15px;
+        justify-content: center;
+        gap: 8px;
     }
 
-    .week-line {
-        order: 3;
+    .day-tabs button {
+        font-size: 14px;
+        padding: 6px 12px;
+        border-radius: 16px;
+    }
+
+    /* LINE */
+    .line {
+        max-width: 90%;
+        margin: 12px auto;
+    }
+
+    /* PAY NOW BUTTON */
+    .pay-now-btn {
         width: 100%;
+        margin: 10px 0 0 0;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
     }
 
+    /* ARROWS */
     .nav-arrows {
-        order: 2;
+        gap: 20px;
+        margin-left: 0;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .nav-arrows button {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
     }
 }
+
 
 
 
@@ -907,121 +598,98 @@ hr {
 
 .footer-bottom-border {
     width: 100%;
-    height: 30px;
-    background-image: url("img/img1.png");
+    height: 40px;                 /* height of visible green line */
+
+    background-image: url("img/footerdown.png");
     background-repeat: repeat-x;
-    background-size: 100%;
-    position: relative;
+
+    background-position: bottom;  /* 🔥 IMPORTANT */
+    background-size: auto;        /* 🔥 IMPORTANT */
+
+    background-color: #f1ebe4;
 }
 
-.footer-bottom-border::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #1d5e2e;
-    opacity: 0.6;
-    /* Same light white effect */
-    z-index: 1;
-}
 
-@media (max-width: 768px) {
 
-    .pattern-bg {
-        height: 80px;
-        background-size: cover;
-    }
-
-    .footer-section {
-        padding: 40px 15px;
-        text-align: center;
-    }
-
-    .footer-content {
-        margin-top: 80px;
-    }
-
-    .footer-logo {
-        width: 120px;
-        margin: 0 auto 15px;
-        display: block;
-    }
-
-    .footer-col {
-        margin-bottom: 25px;
-    }
-
-    .footer-col h5 {
-        font-size: 15px;
-        margin-bottom: 10px;
-    }
-
-    .footer-links {
-        padding: 0;
-    }
-
-    .footer-links li {
-        margin-bottom: 6px;
-    }
-
-    .social-icons {
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .social-icons img {
-        width: 36px;
-        height: 36px;
-    }
-
-    .copyright {
-        font-size: 12px;
-        margin-top: 10px;
-    }
-
-    .footer-bottom-border {
-        height: 22px;
-        background-size: cover;
-    }
-}
 
 /*******************************
-    STRICT MOBILE OVERRIDES
+    STRICT MOBILE OVERRIDES (991px and below)
 *******************************/
 @media (max-width: 991px) {
 
-    /* Navbar Adjustment */
+    /* --- Navigation & Borders --- */
+    .nav-border {
+        position: absolute;
+        width: 100%;
+        padding-top: 30px;
+        height: 22px;
+        background-size: auto 100%;
+    }
+
+    .navbar {
+        padding: 15px 0 !important;
+        margin-top: 0 !important;
+    }
+
     .navbar-brand {
         margin-left: 15px !important;
         margin-right: auto !important;
     }
 
-    /* Menu Header (Title & Text) */
+    .logo-img {
+        max-height: 55px !important;
+        width: auto !important;
+        margin-left: 0 !important;
+    }
+
+    .logo-tagline {
+        font-size: 10px !important;
+        margin-top: -5px !important;
+    }
+
+    .nav-second-border {
+        position: relative !important;
+        margin-top: 0 !important;
+        margin-bottom: 2px !important;
+        height: auto !important;
+        width: 100% !important;
+        z-index: 10 !important;
+    }
+
+    .nav-second-border img {
+        width: 100% !important;
+        display: block !important;
+        height: auto !important;
+    }
+
+    .food-menu-section {
+        padding-top: 2px !important;
+    }
+
+    /* --- Menu Header --- */
     .menu-header {
         flex-direction: column !important;
         text-align: center !important;
-    }
-
-    .menu-header h2,
-    .menu-header p {
-        margin-left: 0 !important;
-        max-width: 100% !important;
+        padding-top: 2px !important;
     }
 
     .menu-header h2 {
         font-size: 34px !important;
-        margin-bottom: 15px !important;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 10px !important;
     }
 
     .menu-header p {
         font-size: 16px !important;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        max-width: 100% !important;
     }
 
-    /* Week Buttons (1st Week, 2nd Week tabs) */
     .week-tabs {
-        margin: 20px 0 0 0 !important;
+        margin-right: 0 !important;
+        margin-top: 20px !important;
         justify-content: center !important;
     }
 
@@ -1031,7 +699,7 @@ hr {
         font-size: 16px !important;
     }
 
-    /* Menu Section & Grid (5 columns to 1 column) */
+    /* --- Grid & Cards --- */
     .menu-section {
         margin-left: 0 !important;
         width: 100% !important;
@@ -1039,23 +707,22 @@ hr {
     }
 
     .menu-grid {
-        grid-template-columns: 1fr !important;
-        /* Stack cards vertically */
+        grid-template-columns: repeat(2, 1fr) !important;
         padding: 0 15px !important;
-        gap: 30px !important;
+        gap: 15px !important;
     }
 
     .menu-card {
-        max-width: 350px !important;
+        max-width: 100% !important;
         margin: 0 auto !important;
     }
 
-    /* Day & Week Navigation Bar */
+    /* --- Day/Week Bar --- */
     .day-week-bar {
         margin-left: 0 !important;
         width: 100% !important;
-        flex-direction: column !important;
         padding: 0 15px !important;
+        flex-direction: column !important;
         gap: 15px !important;
     }
 
@@ -1065,13 +732,14 @@ hr {
     }
 
     .day-tabs button {
-        padding: 8px 12px !important;
-        font-size: 14px !important;
+        padding: 6px 12px !important;
+        font-size: 13px !important;
     }
 
     .week-line {
         justify-content: center !important;
         text-align: center !important;
+        width: 100% !important;
     }
 
     .week-line span {
@@ -1082,7 +750,7 @@ hr {
         justify-content: center !important;
     }
 
-    /* Pickles Banner */
+    /* --- Banners & Newsletter --- */
     .pickles-banner {
         max-width: 95% !important;
         width: 95% !important;
@@ -1101,14 +769,14 @@ hr {
     }
 
     .banner-title {
-        font-size: 1.8rem !important;
+        font-size: 1.6rem !important;
     }
 
-    /* Newsletter Wrapper */
     .newsletter-box {
         width: 95% !important;
         flex-direction: column !important;
         padding: 25px !important;
+        gap: 15px !important;
     }
 
     .newsletter-form {
@@ -1120,17 +788,58 @@ hr {
         width: 100% !important;
     }
 
-    /* Footer Cleanup */
+    /* --- Footer --- */
     .footer-content {
-        margin-top: 60px !important;
+        margin-top: 40px !important;
         text-align: center !important;
     }
 
     .footer-col {
         margin-bottom: 30px !important;
+        width: 100% !important;
     }
 
     .social-icons {
         justify-content: center !important;
+    }
+
+    .footer-bottom-border {
+        height: 18px !important;
+    }
+}
+
+/* --- Mobile Breakpoints --- */
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .menu-card {
+        max-width: 300px !important;
+    }
+
+    .nav-border {
+        padding-top: 40px;
+        height: 18px;
+    }
+}
+
+/* Tablet / Large Mobile Breakpoint */
+
+
+/* Small Mobile Breakpoint */
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .menu-card {
+        max-width: 320px !important;
     }
 }

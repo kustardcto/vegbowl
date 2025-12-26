@@ -12,6 +12,8 @@
 
 
     <!-- Custom CSS -->
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="menu.css">
 
     <!-- Icons -->
@@ -21,10 +23,15 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;600;700&display=swap"
         rel="stylesheet">
 
-
+    <style>
+        body {
+            padding-top: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -48,26 +55,21 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about_us.html">About Us</a></li>
 
-                    <!-- Meals Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Meals Plan</a>
-                        <ul class="dropdown-menu   m-0">
-                            <li><a class="dropdown-item" href="veg_meals.html">Daily Meals</a></li>
-                            <li><a class="dropdown-item" href="#">Corporate Orders</a></li>
-                            <li><a class="dropdown-item" href="#">Catering</a></li>
-                            <li><a class="dropdown-item" href="#">Snacks</a></li>
-                            <li><a class="dropdown-item" href="#">Old People Orders</a></li>
-                            <li><a class="dropdown-item" href="#">Pickles & Powders</a></li>
-                        </ul>
-                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="meals.html">Meals Plan</a></li>
+                        
 
-                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catering.html">Catering</a></li>
+                    
                     <li class="nav-item"><a class="nav-link" href="contact_us.html">Contact Us</a></li>
+                     <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+
 
                     <li class="nav-item ms-lg-3">
                         <a class="pickles-btn" href="#">
@@ -82,9 +84,8 @@
         </div>
     </nav>
 
-
-
-
+<div class="nav-bottom-border"></div>
+  
     <section class="food-menu-section">
         <div class="container">
 
@@ -157,6 +158,10 @@
 
 
             <!-- DAYS -->
+               <div class="week-days">
+                    <span>1<sup>st</sup> Week</span>
+               </div>
+
             <div class="day-week-bar">
 
                 <!-- DAYS -->
@@ -169,18 +174,21 @@
                     <button>Fri</button>
                     <button>Sat</button>
                 </div>
+        
+              <div class="line"></div>
+               <!-- PAY NOW -->
+             <a href="popup.html" class="pay-now-btn">Pay Now</a>
 
-                <!-- WEEK LABEL + LINE -->
-                <div class="week-line">
-                    <span>1<sup>st</sup> Week</span>
-                    <div class="line"></div>
-                </div>
+
+        </div>
+
+               
 
                 <!-- ARROWS -->
-                <div class="nav-arrows">
-                    <button>&lsaquo;</button>
-                    <button>&rsaquo;</button>
-                </div>
+               <div class="nav-arrows">
+              <button id="prev-day">&lsaquo;</button>
+              <button id="next-day">&rsaquo;</button>
+           </div>
 
             </div>
         </div>
@@ -303,9 +311,108 @@
             </div>
         </div>
     </footer>
-    <div class="footer-bottom-border"></div>
+       <div class="footer-bottom-border"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    const weekTabs = document.querySelector(".week-tabs");
+    const maxWeeks = 10; // Maximum number of weeks allowed
+
+    weekTabs.addEventListener("click", function(e) {
+        const target = e.target.closest(".week-btn");
+        if (!target) return; // Clicked outside button
+
+        // Handle Add button
+        if (target.classList.contains("add")) {
+            const currentWeeks = weekTabs.querySelectorAll(".week-btn:not(.add)").length;
+            if (currentWeeks >= maxWeeks) {
+                alert("Maximum weeks reached!");
+                return;
+            }
+            const newWeekNum = currentWeeks + 1;
+            const newBtn = document.createElement("button");
+            newBtn.className = "week-btn";
+            let suffix = "th";
+            if (newWeekNum === 1) suffix = "st";
+            else if (newWeekNum === 2) suffix = "nd";
+            else if (newWeekNum === 3) suffix = "rd";
+            newBtn.innerHTML = `${newWeekNum}<sup>${suffix}</sup><br>Week`;
+            weekTabs.insertBefore(newBtn, target); // Insert before +
+            return;
+        }
+
+        // Remove active class from all week buttons
+        weekTabs.querySelectorAll(".week-btn").forEach(btn => btn.classList.remove("active"));
+        // Set clicked button as active
+        target.classList.add("active");
+    });
+});
+
+
+/* ================= MENU BUTTON ACTIVE TOGGLE ================= */
+document.querySelectorAll('.menu-card').forEach(card => {
+    const buttons = card.querySelectorAll('button');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            card.style.border = ""; // remove error once selected
+        });
+    });
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const dayTabs = document.querySelector(".day-tabs");
+    const dayButtons = dayTabs.querySelectorAll("button");
+    const payNowBtn = document.querySelector(".pay-now-btn");
+
+    // Select day
+    dayTabs.addEventListener("click", function(e) {
+        const target = e.target.closest("button");
+        if (!target) return;
+
+        // Remove active from all
+        dayButtons.forEach(btn => btn.classList.remove("active"));
+        target.classList.add("active");
+
+        // Scroll selected day into view
+        target.scrollIntoView({ behavior: "smooth", inline: "center" });
+    });
+
+    // Navigation arrows
+    const prevBtn = document.getElementById("prev-day");
+    const nextBtn = document.getElementById("next-day");
+
+    const scrollAmount = 80; // px per click
+
+    prevBtn.addEventListener("click", () => {
+        dayTabs.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    });
+
+    nextBtn.addEventListener("click", () => {
+        dayTabs.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+
+    // Pay Now validation
+    payNowBtn.addEventListener("click", function(e) {
+        const selectedDay = dayTabs.querySelector("button.active");
+        if (!selectedDay) {
+            e.preventDefault();
+            alert("Please select a day before proceeding.");
+        }
+    });
+});
+</script>
+
 
 
 </body>

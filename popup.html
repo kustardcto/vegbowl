@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monthly Meal Box</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <div class="overlay">
+
+    <!-- Card -->
+    <div class="meal-card">
+
+      <h2 class="title">Monthly Meal Box</h2>
+
+      <p class="subtitle">
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown 
+        printer took a galley of type and scrambled it to make a type specimen book.      </p>
+
+      <div class="divider"></div>
+
+      <div class="day-list">
+
+        <!-- Day Row -->
+        <div class="day-row">
+          <div class="day-text">
+            <span class="day-title">Day 1</span>
+            <p>Pappu | White Rice | Sambar | Card | Pickle | Pulka</p>
+          </div>
+          <a href="menu.html" class="icon-btn" type="button"><img src="img/popup.gif"></a>
+        </div>
+
+        <div class="day-row">
+          <div class="day-text">
+            <span class="day-title">Day 2</span>
+            <p>Pappu | White Rice | Sambar | Card | Pickle | Pulka</p>
+          </div>
+          <button class="icon-btn" type="button"><img src="img/popup.gif"></button>
+        </div>
+
+        <div class="day-row">
+          <div class="day-text">
+            <span class="day-title">Day 3</span>
+            <p>Pappu | White Rice | Sambar | Card | Pickle | Pulka</p>
+          </div>
+          <button class="icon-btn" type="button"><img src="img/popup.gif"></button>
+        </div>
+
+        <div class="day-row">
+          <div class="day-text">
+            <span class="day-title">Day 4</span>
+            <p>Pappu | White Rice | Sambar | Card | Pickle | Pulka</p>
+          </div>
+          <button class="icon-btn" type="button"><img src="img/popup.gif"></button>
+        </div>
+
+        <div class="day-row">
+          <div class="day-text">
+            <span class="day-title">Day 5</span>
+            <p>Pappu | White Rice | Sambar | Card | Pickle | Pulka</p>
+          </div>
+          <button class="icon-btn" type="button"><img src="img/popup.gif"></button>
+        </div>
+
+        <div class="day-row">
+          <div class="day-text">
+            <span class="day-title">Day 6</span>
+            <p>Pappu | White Rice | Sambar | Card | Pickle | Pulka</p>
+          </div>
+          <button class="icon-btn" type="button"><img src="img/popup.gif"></button>
+        </div>
+
+        <div class="day-row">
+          <div class="day-text">
+            <span class="day-title">Day 7</span>
+            <p>Pappu | White Rice | Sambar | Card | Pickle | Pulka</p>
+          </div>
+          <button class="icon-btn" type="button"><img src="img/popup.gif"></button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- EDIT MENU MODAL -->
+<div class="edit-modal" id="editModal">
+    <div class="edit-modal-content">
+
+        <h3>Edit Menu</h3>
+
+        <div class="edit-options">
+            <label><input type="checkbox" value="Pappu"> Pappu</label>
+            <label><input type="checkbox" value="White Rice"> White Rice</label>
+            <label><input type="checkbox" value="Sambar"> Sambar</label>
+            <label><input type="checkbox" value="Curd"> Curd</label>
+            <label><input type="checkbox" value="Pickle"> Pickle</label>
+            <label><input type="checkbox" value="Pulka"> Pulka</label>
+        </div>
+
+        <div class="edit-actions">
+            <button class="save-btn" onclick="saveMenu()">Save</button>
+            <button class="cancel-btn" onclick="closeEditModal()">Cancel</button>
+        </div>
+
+    </div>
+</div>
+
+
+    <!-- Submit Button OUTSIDE card -->
+    <div class="footer">
+      <a href="shopping.html" class="submit-btn">Continue Cart</a>
+
+
+    </div>
+
+  </div>
+<script>
+let currentRow = null;
+
+/* Open modal & load existing menu */
+function openEditModal(button) {
+    currentRow = button.closest('.day-row');
+    const menuText = currentRow.querySelector('p').innerText;
+
+    document.querySelectorAll('.edit-options input').forEach(cb => {
+        cb.checked = menuText.includes(cb.value);
+    });
+
+    document.getElementById('editModal').style.display = 'flex';
+}
+
+/* Close modal */
+function closeEditModal() {
+    document.getElementById('editModal').style.display = 'none';
+}
+
+/* Save menu */
+function saveMenu() {
+    const selected = [];
+
+    document.querySelectorAll('.edit-options input:checked')
+        .forEach(cb => selected.push(cb.value));
+
+    if (selected.length === 0) {
+        alert("Please select at least one menu item");
+        return;
+    }
+
+    currentRow.querySelector('p').innerText = selected.join(" | ");
+    closeEditModal();
+}
+</script>
+
+
+</body>
+</html>
